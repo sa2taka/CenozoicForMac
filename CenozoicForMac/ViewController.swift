@@ -7,8 +7,10 @@
 //
 
 import Cocoa
+import AVFoundation
 
 class ViewController: NSViewController {
+  var speaker = NSSpeechSynthesizer()
   let timelineURL = "https://mstdn-workers.com/api/v1/timelines/public?local=true"
   var lastID = 0;
 
@@ -37,6 +39,9 @@ class ViewController: NSViewController {
         speakedContents = speakedContents.reversed() // 逆順に取得したコンテンツを逆さまにして時系列に変更する
         print(self.lastID)
         print(speakedContents)
+        for content in speakedContents{
+          self.speakContent(content)
+        }
       }
     }
     task.resume()
@@ -68,9 +73,14 @@ class ViewController: NSViewController {
     self.lastID = (json[0] as! Dictionary<String, Any>)["id"] as! Int
   }
   
+  func speakContent(_ content: String){
+    speaker.startSpeaking(content)
+  }
+  
   // String中のHTMLタグを削除する
   func removeHTMLTag(str: String) -> String {
     return str.pregReplace(pattern: "<[^>]+>", with: "")
   }
+  
 }
 
