@@ -18,13 +18,27 @@ class ViewController: NSViewController {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
+    
+    initSpeaker()
+    // 初回
     speakNewToots()
+    
+    Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onUpdate(_:)), userInfo: nil, repeats: false)
   }
 
   override var representedObject: Any? {
     didSet {
     // Update the view, if already loaded.
     }
+  }
+  
+  func initSpeaker(){
+    speaker.rate = 3
+  }
+  
+  func onUpdate(_ timer: Timer){
+    speakNewToots()
+    Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onUpdate(_:)), userInfo: nil, repeats: false)
   }
   
   func speakNewToots() {
@@ -37,7 +51,6 @@ class ViewController: NSViewController {
         var speakedContents = self.getSpeakedContents(json)
         self.updateLastID(json)
         speakedContents = speakedContents.reversed() // 逆順に取得したコンテンツを逆さまにして時系列に変更する
-        print(self.lastID)
         print(speakedContents)
         for content in speakedContents{
           self.speakContent(content)
@@ -74,13 +87,16 @@ class ViewController: NSViewController {
   }
   
   func speakContent(_ content: String){
+    print(content)
+    speaker.stopSpeaking()
     speaker.startSpeaking(content)
+    Thread.sleep(forTimeInterval: 0.5)
+    while(speaker.isSpeaking){}
   }
   
   // String中のHTMLタグを削除する
   func removeHTMLTag(str: String) -> String {
     return str.pregReplace(pattern: "<[^>]+>", with: "")
   }
-  
 }
 
