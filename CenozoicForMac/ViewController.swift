@@ -30,9 +30,12 @@ class ViewController: NSViewController {
     let url = URL(string: timelineURL + "&since_id=" + String(lastID))!
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
       if let jsonData = data {
-        //
+        // ここで取得したデータからJSONを抜き出し喋らせる処理を行う
         let json = self.getJSON(jsonData)
-        let speakedContents = self.getSpeakedContents(json)
+        var speakedContents = self.getSpeakedContents(json)
+        self.updateLastID(json)
+        
+        print(self.lastID)
         print(speakedContents)
       }
     }
@@ -58,6 +61,11 @@ class ViewController: NSViewController {
       speakedContents.append(removeHTMLTag(str: String(describing: (data as! Dictionary<String, Any>)["content"]!)))
     }
     return speakedContents
+  }
+  
+  // LastIDを更新する
+  func updateLastID(_ json: NSArray){
+    self.lastID = (json[0] as! Dictionary<String, Any>)["id"] as! Int
   }
   
   // String中のHTMLタグを削除する
