@@ -34,7 +34,7 @@ class ViewController: NSViewController {
         let json = self.getJSON(jsonData)
         var speakedContents = self.getSpeakedContents(json)
         self.updateLastID(json)
-        
+        speakedContents = speakedContents.reversed() // 逆順に取得したコンテンツを逆さまにして時系列に変更する
         print(self.lastID)
         print(speakedContents)
       }
