@@ -30,13 +30,25 @@ class ViewController: NSViewController {
     let url = URL(string: timelineURL + "&since_id=" + String(lastID))!
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
       if let jsonData = data {
-        self.getSpeakedContents(jsonData: jsonData)
+        let json = self.getJSON(jsonData)
+        let speakedContents = self.getSpeakedContents(json)
       }
     }
     task.resume()
   }
   
-  func getSpeakedContents(jsonData: Data) -> Array<String> {
+  func getJSON(_ data: Data) -> NSArray{
+    var json : NSArray = []
+    do{
+      json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSArray
+    }
+    catch{
+      print("error: getJSON()")
+    }
+    return json
+  }
+  
+  func getSpeakedContents(_ json: NSArray) -> Array<String> {
     
   }
   
