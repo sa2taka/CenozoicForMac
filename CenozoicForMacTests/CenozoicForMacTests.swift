@@ -2,7 +2,7 @@
 //  CenozoicForMacTests.swift
 //  CenozoicForMacTests
 //
-//  Created by 薩田和弘 on 2017/04/23.
+//  Created by t0p_l1ght on 2017/04/23.
 //  Copyright © 2017年 Kazuhiro S. All rights reserved.
 //
 
