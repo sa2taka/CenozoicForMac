@@ -16,6 +16,7 @@ class ViewController: NSViewController {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
+    speakNewToot()
   }
 
   override var representedObject: Any? {
@@ -24,14 +25,25 @@ class ViewController: NSViewController {
     }
   }
   
-  func getJson() -> Data? {
+  func speakNewToot() {
+    let timelineURL = "https://mstdn-workers.com/api/v1/timelines/public?local=true"
     let url = URL(string: timelineURL + "&since_id=587050")!
-    var res : Data?
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
-      res = data
+      
+      if let jsonData = data {
+        self.printJSON(jsonData)
+      }
     }
     task.resume()
-    return res
+  }
+  
+  func printJSON(_ data: Data) {
+    do {
+      let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSArray
+      print(json)
+    } catch {
+      print("parse error!")
+    }
   }
 }
 
