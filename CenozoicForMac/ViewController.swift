@@ -11,6 +11,7 @@ import AVFoundation
 
 class ViewController: NSViewController {
   var speaker = NSSpeechSynthesizer()
+  var isSpeaking = false
   let timelineURL = "https://mstdn-workers.com/api/v1/timelines/public?local=true"
   var lastID = 0;
 
@@ -37,7 +38,10 @@ class ViewController: NSViewController {
   }
   
   func onUpdate(_ timer: Timer){
-    speakNewToots()
+    if(!isSpeaking){
+      print("hogehoge")
+      speakNewToots()
+    }
     Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onUpdate(_:)), userInfo: nil, repeats: false)
   }
   
@@ -45,6 +49,7 @@ class ViewController: NSViewController {
     let timelineURL = "https://mstdn-workers.com/api/v1/timelines/public?local=true"
     let url = URL(string: timelineURL + "&since_id=" + String(lastID))!
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
+      self.isSpeaking = true
       if let jsonData = data {
         // ここで取得したデータからJSONを抜き出し喋らせる処理を行う
         let json = self.getJSON(jsonData)
@@ -56,6 +61,7 @@ class ViewController: NSViewController {
           self.speakContent(content)
         }
       }
+      self.isSpeaking = false
     }
     task.resume()
   }
