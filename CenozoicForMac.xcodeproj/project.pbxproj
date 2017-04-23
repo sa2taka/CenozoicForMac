@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D32FF8DE1EACACC500AF0F1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8DD1EACACC500AF0F1E /* AppDelegate.swift */; };
+		D32FF8E01EACACC500AF0F1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8DF1EACACC500AF0F1E /* ViewController.swift */; };
+		D32FF8E21EACACC500AF0F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D32FF8E11EACACC500AF0F1E /* Assets.xcassets */; };
+		D32FF8E51EACACC500AF0F1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D32FF8E31EACACC500AF0F1E /* Main.storyboard */; };
+		D32FF8F01EACACC500AF0F1E /* CenozoicForMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8EF1EACACC500AF0F1E /* CenozoicForMacTests.swift */; };
+		D32FF8FB1EACACC500AF0F1E /* CenozoicForMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8FA1EACACC500AF0F1E /* CenozoicForMacUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D32FF8EC1EACACC500AF0F1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D32FF8D21EACACC500AF0F1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D32FF8D91EACACC500AF0F1E;
+			remoteInfo = CenozoicForMac;
+		};
+		D32FF8F71EACACC500AF0F1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D32FF8D21EACACC500AF0F1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D32FF8D91EACACC500AF0F1E;
+			remoteInfo = CenozoicForMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D32FF8DA1EACACC500AF0F1E /* CenozoicForMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CenozoicForMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D32FF8DD1EACACC500AF0F1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D32FF8DF1EACACC500AF0F1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D32FF8E11EACACC500AF0F1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D32FF8E41EACACC500AF0F1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D32FF8E61EACACC500AF0F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D32FF8EB1EACACC500AF0F1E /* CenozoicForMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CenozoicForMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D32FF8EF1EACACC500AF0F1E /* CenozoicForMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenozoicForMacTests.swift; sourceTree = "<group>"; };
+		D32FF8F11EACACC500AF0F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D32FF8F61EACACC500AF0F1E /* CenozoicForMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CenozoicForMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D32FF8FA1EACACC500AF0F1E /* CenozoicForMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenozoicForMacUITests.swift; sourceTree = "<group>"; };
+		D32FF8FC1EACACC500AF0F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D32FF8D71EACACC500AF0F1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D32FF8E81EACACC500AF0F1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D32FF8F31EACACC500AF0F1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D32FF8D11EACACC500AF0F1E = {
+			isa = PBXGroup;
+			children = (
+				D32FF8DC1EACACC500AF0F1E /* CenozoicForMac */,
+				D32FF8EE1EACACC500AF0F1E /* CenozoicForMacTests */,
+				D32FF8F91EACACC500AF0F1E /* CenozoicForMacUITests */,
+				D32FF8DB1EACACC500AF0F1E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D32FF8DB1EACACC500AF0F1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D32FF8DA1EACACC500AF0F1E /* CenozoicForMac.app */,
+				D32FF8EB1EACACC500AF0F1E /* CenozoicForMacTests.xctest */,
+				D32FF8F61EACACC500AF0F1E /* CenozoicForMacUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D32FF8DC1EACACC500AF0F1E /* CenozoicForMac */ = {
+			isa = PBXGroup;
+			children = (
+				D32FF8DD1EACACC500AF0F1E /* AppDelegate.swift */,
+				D32FF8DF1EACACC500AF0F1E /* ViewController.swift */,
+				D32FF8E11EACACC500AF0F1E /* Assets.xcassets */,
+				D32FF8E31EACACC500AF0F1E /* Main.storyboard */,
+				D32FF8E61EACACC500AF0F1E /* Info.plist */,
+			);
+			path = CenozoicForMac;
+			sourceTree = "<group>";
+		};
+		D32FF8EE1EACACC500AF0F1E /* CenozoicForMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				D32FF8EF1EACACC500AF0F1E /* CenozoicForMacTests.swift */,
+				D32FF8F11EACACC500AF0F1E /* Info.plist */,
+			);
+			path = CenozoicForMacTests;
+			sourceTree = "<group>";
+		};
+		D32FF8F91EACACC500AF0F1E /* CenozoicForMacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D32FF8FA1EACACC500AF0F1E /* CenozoicForMacUITests.swift */,
+				D32FF8FC1EACACC500AF0F1E /* Info.plist */,
+			);
+			path = CenozoicForMacUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D32FF8D91EACACC500AF0F1E /* CenozoicForMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D32FF8FF1EACACC500AF0F1E /* Build configuration list for PBXNativeTarget "CenozoicForMac" */;
+			buildPhases = (
+				D32FF8D61EACACC500AF0F1E /* Sources */,
+				D32FF8D71EACACC500AF0F1E /* Frameworks */,
+				D32FF8D81EACACC500AF0F1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CenozoicForMac;
+			productName = CenozoicForMac;
+			productReference = D32FF8DA1EACACC500AF0F1E /* CenozoicForMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D32FF8EA1EACACC500AF0F1E /* CenozoicForMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D32FF9021EACACC500AF0F1E /* Build configuration list for PBXNativeTarget "CenozoicForMacTests" */;
+			buildPhases = (
+				D32FF8E71EACACC500AF0F1E /* Sources */,
+				D32FF8E81EACACC500AF0F1E /* Frameworks */,
+				D32FF8E91EACACC500AF0F1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D32FF8ED1EACACC500AF0F1E /* PBXTargetDependency */,
+			);
+			name = CenozoicForMacTests;
+			productName = CenozoicForMacTests;
+			productReference = D32FF8EB1EACACC500AF0F1E /* CenozoicForMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D32FF8F51EACACC500AF0F1E /* CenozoicForMacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D32FF9051EACACC500AF0F1E /* Build configuration list for PBXNativeTarget "CenozoicForMacUITests" */;
+			buildPhases = (
+				D32FF8F21EACACC500AF0F1E /* Sources */,
+				D32FF8F31EACACC500AF0F1E /* Frameworks */,
+				D32FF8F41EACACC500AF0F1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D32FF8F81EACACC500AF0F1E /* PBXTargetDependency */,
+			);
+			name = CenozoicForMacUITests;
+			productName = CenozoicForMacUITests;
+			productReference = D32FF8F61EACACC500AF0F1E /* CenozoicForMacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D32FF8D21EACACC500AF0F1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Kazuhiro S";
+				TargetAttributes = {
+					D32FF8D91EACACC500AF0F1E = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = C6P4627NL8;
+						ProvisioningStyle = Automatic;
+					};
+					D32FF8EA1EACACC500AF0F1E = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = C6P4627NL8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D32FF8D91EACACC500AF0F1E;
+					};
+					D32FF8F51EACACC500AF0F1E = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = C6P4627NL8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D32FF8D91EACACC500AF0F1E;
+					};
+				};
+			};
+			buildConfigurationList = D32FF8D51EACACC500AF0F1E /* Build configuration list for PBXProject "CenozoicForMac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D32FF8D11EACACC500AF0F1E;
+			productRefGroup = D32FF8DB1EACACC500AF0F1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D32FF8D91EACACC500AF0F1E /* CenozoicForMac */,
+				D32FF8EA1EACACC500AF0F1E /* CenozoicForMacTests */,
+				D32FF8F51EACACC500AF0F1E /* CenozoicForMacUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D32FF8D81EACACC500AF0F1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D32FF8E21EACACC500AF0F1E /* Assets.xcassets in Resources */,
+				D32FF8E51EACACC500AF0F1E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D32FF8E91EACACC500AF0F1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D32FF8F41EACACC500AF0F1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D32FF8D61EACACC500AF0F1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D32FF8E01EACACC500AF0F1E /* ViewController.swift in Sources */,
+				D32FF8DE1EACACC500AF0F1E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D32FF8E71EACACC500AF0F1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D32FF8F01EACACC500AF0F1E /* CenozoicForMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D32FF8F21EACACC500AF0F1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D32FF8FB1EACACC500AF0F1E /* CenozoicForMacUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D32FF8ED1EACACC500AF0F1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D32FF8D91EACACC500AF0F1E /* CenozoicForMac */;
+			targetProxy = D32FF8EC1EACACC500AF0F1E /* PBXContainerItemProxy */;
+		};
+		D32FF8F81EACACC500AF0F1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D32FF8D91EACACC500AF0F1E /* CenozoicForMac */;
+			targetProxy = D32FF8F71EACACC500AF0F1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D32FF8E31EACACC500AF0F1E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D32FF8E41EACACC500AF0F1E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D32FF8FD1EACACC500AF0F1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D32FF8FE1EACACC500AF0F1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		D32FF9001EACACC500AF0F1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = C6P4627NL8;
+				INFOPLIST_FILE = CenozoicForMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sa2taka.CenozoicForMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D32FF9011EACACC500AF0F1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = C6P4627NL8;
+				INFOPLIST_FILE = CenozoicForMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sa2taka.CenozoicForMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D32FF9031EACACC500AF0F1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = C6P4627NL8;
+				INFOPLIST_FILE = CenozoicForMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sa2taka.CenozoicForMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CenozoicForMac.app/Contents/MacOS/CenozoicForMac";
+			};
+			name = Debug;
+		};
+		D32FF9041EACACC500AF0F1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = C6P4627NL8;
+				INFOPLIST_FILE = CenozoicForMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sa2taka.CenozoicForMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CenozoicForMac.app/Contents/MacOS/CenozoicForMac";
+			};
+			name = Release;
+		};
+		D32FF9061EACACC500AF0F1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = C6P4627NL8;
+				INFOPLIST_FILE = CenozoicForMacUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sa2taka.CenozoicForMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CenozoicForMac;
+			};
+			name = Debug;
+		};
+		D32FF9071EACACC500AF0F1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = C6P4627NL8;
+				INFOPLIST_FILE = CenozoicForMacUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sa2taka.CenozoicForMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CenozoicForMac;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D32FF8D51EACACC500AF0F1E /* Build configuration list for PBXProject "CenozoicForMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D32FF8FD1EACACC500AF0F1E /* Debug */,
+				D32FF8FE1EACACC500AF0F1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D32FF8FF1EACACC500AF0F1E /* Build configuration list for PBXNativeTarget "CenozoicForMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D32FF9001EACACC500AF0F1E /* Debug */,
+				D32FF9011EACACC500AF0F1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D32FF9021EACACC500AF0F1E /* Build configuration list for PBXNativeTarget "CenozoicForMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D32FF9031EACACC500AF0F1E /* Debug */,
+				D32FF9041EACACC500AF0F1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D32FF9051EACACC500AF0F1E /* Build configuration list for PBXNativeTarget "CenozoicForMacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D32FF9061EACACC500AF0F1E /* Debug */,
+				D32FF9071EACACC500AF0F1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D32FF8D21EACACC500AF0F1E /* Project object */;
+}
