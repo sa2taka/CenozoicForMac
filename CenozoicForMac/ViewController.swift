@@ -34,12 +34,11 @@ class ViewController: NSViewController {
   }
   
   func initSpeaker(){
-    speaker.rate = 3
+    speaker.rate *= 2
   }
   
   func onUpdate(_ timer: Timer){
     if(!isSpeaking){
-      print("hogehoge")
       speakNewToots()
     }
     Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onUpdate(_:)), userInfo: nil, repeats: false)
@@ -56,7 +55,6 @@ class ViewController: NSViewController {
         var speakedContents = self.getSpeakedContents(json)
         self.updateLastID(json)
         speakedContents = speakedContents.reversed() // 逆順に取得したコンテンツを逆さまにして時系列に変更する
-        print(speakedContents)
         for content in speakedContents{
           self.speakContent(content)
         }
@@ -92,8 +90,8 @@ class ViewController: NSViewController {
     self.lastID = (json[0] as! Dictionary<String, Any>)["id"] as! Int
   }
   
+  // 喋る。
   func speakContent(_ content: String){
-    print(content)
     speaker.stopSpeaking()
     speaker.startSpeaking(content)
     Thread.sleep(forTimeInterval: 0.5)
