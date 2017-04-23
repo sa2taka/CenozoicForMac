@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  CenozoicForMac
 //
-//  Created by 薩田和弘 on 2017/04/23.
+//  Created by t0p_l1ght on 2017/04/23.
 //  Copyright © 2017年 Kazuhiro S. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ class ViewController: NSViewController {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
-    speakNewToot()
+    speakNewToots()
   }
 
   override var representedObject: Any? {
@@ -25,25 +25,23 @@ class ViewController: NSViewController {
     }
   }
   
-  func speakNewToot() {
+  func speakNewToots() {
     let timelineURL = "https://mstdn-workers.com/api/v1/timelines/public?local=true"
-    let url = URL(string: timelineURL + "&since_id=587050")!
+    let url = URL(string: timelineURL + "&since_id=" + String(lastID))!
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
-      
       if let jsonData = data {
-        self.printJSON(jsonData)
+        self.getSpeakedContents(jsonData: jsonData)
       }
     }
     task.resume()
   }
   
-  func printJSON(_ data: Data) {
-    do {
-      let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSArray
-      print(json)
-    } catch {
-      print("parse error!")
-    }
+  func getSpeakedContents(jsonData: Data) -> Array<String> {
+    
+  }
+  
+  func removeHTMLTag(str: String) -> String{
+    return str.pregReplace(pattern: "<[^>]+>", with: "")
   }
 }
 

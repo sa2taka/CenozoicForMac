@@ -13,6 +13,7 @@
 		D32FF8E51EACACC500AF0F1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D32FF8E31EACACC500AF0F1E /* Main.storyboard */; };
 		D32FF8F01EACACC500AF0F1E /* CenozoicForMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8EF1EACACC500AF0F1E /* CenozoicForMacTests.swift */; };
 		D32FF8FB1EACACC500AF0F1E /* CenozoicForMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8FA1EACACC500AF0F1E /* CenozoicForMacUITests.swift */; };
+		D3C11F791EACC68E00F1863B /* ExtinctStringClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C11F781EACC68E00F1863B /* ExtinctStringClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		D32FF8F61EACACC500AF0F1E /* CenozoicForMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CenozoicForMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32FF8FA1EACACC500AF0F1E /* CenozoicForMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenozoicForMacUITests.swift; sourceTree = "<group>"; };
 		D32FF8FC1EACACC500AF0F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3C11F781EACC68E00F1863B /* ExtinctStringClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtinctStringClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				D32FF8DD1EACACC500AF0F1E /* AppDelegate.swift */,
 				D32FF8DF1EACACC500AF0F1E /* ViewController.swift */,
+				D3C11F781EACC68E00F1863B /* ExtinctStringClass.swift */,
 				D32FF8E11EACACC500AF0F1E /* Assets.xcassets */,
 				D32FF8E31EACACC500AF0F1E /* Main.storyboard */,
 				D32FF8E61EACACC500AF0F1E /* Info.plist */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D32FF8E01EACACC500AF0F1E /* ViewController.swift in Sources */,
+				D3C11F791EACC68E00F1863B /* ExtinctStringClass.swift in Sources */,
 				D32FF8DE1EACACC500AF0F1E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +511,7 @@
 				D32FF9011EACACC500AF0F1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D32FF9021EACACC500AF0F1E /* Build configuration list for PBXNativeTarget "CenozoicForMacTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				D32FF9041EACACC500AF0F1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D32FF9051EACACC500AF0F1E /* Build configuration list for PBXNativeTarget "CenozoicForMacUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				D32FF9071EACACC500AF0F1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
