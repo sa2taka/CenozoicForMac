@@ -90,6 +90,7 @@ class ViewController: NSViewController {
     for data in json {
       var content = String(describing: (data as! Dictionary<String, Any>)["content"]!)
       content = removeHTMLTag(str: content)
+      content = removeURL(str: content)
       speakedContents.append(content)
     }
     return speakedContents
@@ -111,6 +112,10 @@ class ViewController: NSViewController {
   // String中のHTMLタグを削除する
   func removeHTMLTag(str: String) -> String {
     return str.pregReplace(pattern: "<[^>]+>", with: "")
+  }
+  
+  func removeURL(str: String) -> String{
+    return str.pregReplace(pattern: "http.*[\\s$]", with: "URL省略")
   }
 }
 
