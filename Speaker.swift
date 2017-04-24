@@ -13,9 +13,23 @@ import Cocoa
 class Speaker {
   var mainSpeaker = NSSpeechSynthesizer()
   var speakContents = Array<String>()
+  var isStartingSpeak = false
   
   init(rate: Float){
     mainSpeaker.rate = rate
+  }
+  
+  func startSpeaking(){
+    isStartingSpeak = true
+    DispatchQueue(label: "speak").async {
+      while(self.isStartingSpeak){
+        if(self.speakContents.count != 0){
+          let speakedContent = String(self.speakContents[0])!
+          self.speakContents = Array(self.speakContents.dropFirst())
+          self.speakContent(speakedContent)
+        }
+      }
+    }
   }
   
   func addSpeakedContent(_ content: String){

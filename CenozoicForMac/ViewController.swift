@@ -21,6 +21,7 @@ class ViewController: NSViewController {
     // 初回
     speakNewToots()
     
+    speaker.startSpeaking()
     Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onUpdate(_:)), userInfo: nil, repeats: false)
   }
   
