@@ -10,26 +10,28 @@ import Foundation
 import AVFoundation
 import Cocoa
 
-class Speaker {
+class Speaker : NSObject, NSSpeechSynthesizerDelegate{
   var mainSpeaker = NSSpeechSynthesizer()
   var speakContents = Array<String>()
   var isStartingSpeak = false
   
   init(rate: Float){
+    super.init()
+    mainSpeaker.delegate = self
     mainSpeaker.rate = rate
   }
   
   func startSpeaking(){
-    isStartingSpeak = true
-    DispatchQueue(label: "speak").async {
-      while(self.isStartingSpeak){
+    Thread.sleep(forTimeInterval: 0.5)
+    speakOneContent()
+  }
+  
+  func speakOneContent(){
         if(self.speakContents.count != 0){
           let speakedContent = String(self.speakContents[0])!
           self.speakContents = Array(self.speakContents.dropFirst())
           self.speakContent(speakedContent)
         }
-      }
-    }
   }
   
   func addSpeakedContent(_ content: String){
@@ -39,13 +41,22 @@ class Speaker {
   
   // 喋る。
   func speakContent(_ content: String){
-    mainSpeaker.stopSpeaking()
     mainSpeaker.startSpeaking(content)
-    Thread.sleep(forTimeInterval: 0.5)
-    while(mainSpeaker.isSpeaking){}
   }
   
   func changeRate(_ rate: Float){
     mainSpeaker.rate = rate
   }
+  
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer, didFinishSpeaking finishedSpeaking: Bool) {
+    speakOneContent()
+  }
+  
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer, didEncounterErrorAt characterIndex: Int, of string: String, message: String) {}
+  
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer, willSpeakWord characterRange: NSRange, of string: String) {}
+  
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer, didEncounterSyncMessage message: String) {}
+  
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer, willSpeakPhoneme phonemeOpcode: Int16) {}
 }
