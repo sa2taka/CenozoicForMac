@@ -14,7 +14,7 @@
 		D32FF8F01EACACC500AF0F1E /* CenozoicForMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8EF1EACACC500AF0F1E /* CenozoicForMacTests.swift */; };
 		D32FF8FB1EACACC500AF0F1E /* CenozoicForMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8FA1EACACC500AF0F1E /* CenozoicForMacUITests.swift */; };
 		D3C11F791EACC68E00F1863B /* ExtinctStringClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C11F781EACC68E00F1863B /* ExtinctStringClass.swift */; };
-		D3C11F7B1EAE253B00F1863B /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C11F7A1EAE253B00F1863B /* Speaker.swift */; };
+		D3C11F7F1EAE35AC00F1863B /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C11F7E1EAE35AC00F1863B /* Speaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		D32FF8FA1EACACC500AF0F1E /* CenozoicForMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenozoicForMacUITests.swift; sourceTree = "<group>"; };
 		D32FF8FC1EACACC500AF0F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3C11F781EACC68E00F1863B /* ExtinctStringClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtinctStringClass.swift; sourceTree = "<group>"; };
-		D3C11F7A1EAE253B00F1863B /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Speaker.swift; path = ../Speaker.swift; sourceTree = "<group>"; };
+		D3C11F7E1EAE35AC00F1863B /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 		D32FF8DC1EACACC500AF0F1E /* CenozoicForMac */ = {
 			isa = PBXGroup;
 			children = (
-				D3C11F7A1EAE253B00F1863B /* Speaker.swift */,
+				D3C11F7E1EAE35AC00F1863B /* Speaker.swift */,
 				D32FF8DD1EACACC500AF0F1E /* AppDelegate.swift */,
 				D32FF8DF1EACACC500AF0F1E /* ViewController.swift */,
 				D3C11F781EACC68E00F1863B /* ExtinctStringClass.swift */,
@@ -267,7 +267,7 @@
 				D32FF8E01EACACC500AF0F1E /* ViewController.swift in Sources */,
 				D3C11F791EACC68E00F1863B /* ExtinctStringClass.swift in Sources */,
 				D32FF8DE1EACACC500AF0F1E /* AppDelegate.swift in Sources */,
-				D3C11F7B1EAE253B00F1863B /* Speaker.swift in Sources */,
+				D3C11F7F1EAE35AC00F1863B /* Speaker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
