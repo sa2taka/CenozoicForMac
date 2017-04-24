@@ -115,7 +115,10 @@ class ViewController: NSViewController {
   }
   
   func removeURL(str: String) -> String{
-    return str.pregReplace(pattern: "http.*[\\s$]", with: "URL省略")
+    var removedURLString = String()
+    removedURLString =  str.pregReplace(pattern: "http.*\\s", with: "URL省略")
+    removedURLString =  str.pregReplace(pattern: "http.*$", with: "URL省略")
+    return removedURLString
   }
 }
 
