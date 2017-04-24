@@ -32,10 +32,8 @@ class ViewController: NSViewController {
   }
   
   func onUpdate(_ timer: Timer){
-    if(!isSpeaking){
-      speakNewToots()
-    }
-    Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onUpdate(_:)), userInfo: nil, repeats: false)
+    speakNewToots()
+    Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.onUpdate(_:)), userInfo: nil, repeats: false)
   }
   
   func speakNewToots() {
@@ -55,12 +53,13 @@ class ViewController: NSViewController {
           for content in speakedContents{
             self.speaker.addSpeakedContent(content)
           }
-          
         }
       }
-      self.isSpeaking = false
     }
     task.resume()
+    if(!speaker.mainSpeaker.isSpeaking){
+      speaker.speakOneContent()
+    }
   }
   
   // JSONを取得する
@@ -105,9 +104,8 @@ class ViewController: NSViewController {
   
   func removeURL(str: String) -> String{
     var removedURLString = String()
-    removedURLString =  str.pregReplace(pattern: "http.*\\s", with: "URL省略")
-    removedURLString =  str.pregReplace(pattern: "http.*$", with: "URL省略")
-    removedURLString =  str.pregReplace(pattern: "http.*\\n", with: "URL省略")
+    removedURLString =  str.pregReplace(pattern: "https?:\\/\\/[^\\s]+", with: "URL省略")
+    print(removedURLString)
     return removedURLString
   }
 }

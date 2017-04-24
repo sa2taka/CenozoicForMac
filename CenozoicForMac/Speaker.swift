@@ -37,9 +37,6 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
   func addSpeakedContent(_ content: String){
     print(speakContents)
     speakContents.append(content)
-    if(!mainSpeaker.isSpeaking){
-      speakOneContent()
-    }
   }
   
   // 喋る。
