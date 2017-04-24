@@ -107,6 +107,7 @@ class ViewController: NSViewController {
     var removedURLString = String()
     removedURLString =  str.pregReplace(pattern: "http.*\\s", with: "URL省略")
     removedURLString =  str.pregReplace(pattern: "http.*$", with: "URL省略")
+    removedURLString =  str.pregReplace(pattern: "http.*\\n", with: "URL省略")
     return removedURLString
   }
 }
