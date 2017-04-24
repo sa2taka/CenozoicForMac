@@ -7,10 +7,9 @@
 //
 
 import Cocoa
-import AVFoundation
 
 class ViewController: NSViewController {
-  var speaker = NSSpeechSynthesizer()
+  var speaker = Speaker(rate: 360)
   var isSpeaking = false
   let timelineURL = "https://mstdn-workers.com/api/v1/timelines/public?local=true"
   var lastID = 0;
@@ -19,8 +18,6 @@ class ViewController: NSViewController {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
-    
-    initSpeaker()
     // 初回
     speakNewToots()
     
@@ -31,10 +28,6 @@ class ViewController: NSViewController {
     didSet {
       // Update the view, if already loaded.
     }
-  }
-  
-  func initSpeaker(){
-    speaker.rate *= 3
   }
   
   func onUpdate(_ timer: Timer){
@@ -55,10 +48,13 @@ class ViewController: NSViewController {
         if(json.count != 0){
           var speakedContents = self.getSpeakedContents(json)
           self.updateLastID(json)
+          
           speakedContents = speakedContents.reversed() // 逆順に取得したコンテンツを逆さまにして時系列に変更する
+          
           for content in speakedContents{
-            self.speakContent(content)
+            self.speaker.speakContent(content)
           }
+          
         }
       }
       self.isSpeaking = false
@@ -99,14 +95,6 @@ class ViewController: NSViewController {
   // LastIDを更新する
   func updateLastID(_ json: NSArray){
     self.lastID = (json[0] as! Dictionary<String, Any>)["id"] as! Int
-  }
-  
-  // 喋る。
-  func speakContent(_ content: String){
-    speaker.stopSpeaking()
-    speaker.startSpeaking(content)
-    Thread.sleep(forTimeInterval: 0.5)
-    while(speaker.isSpeaking){}
   }
   
   // String中のHTMLタグを削除する
