@@ -12,10 +12,17 @@ import Cocoa
 
 class Speaker {
   var mainSpeaker = NSSpeechSynthesizer()
+  var speakContents = Array<String>()
   
   init(rate: Float){
     mainSpeaker.rate = rate
   }
+  
+  func addSpeakedContent(_ content: String){
+    print(speakContents)
+    speakContents.append(content)
+  }
+  
   // 喋る。
   func speakContent(_ content: String){
     mainSpeaker.stopSpeaking()

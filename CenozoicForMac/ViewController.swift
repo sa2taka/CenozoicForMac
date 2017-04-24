@@ -52,7 +52,7 @@ class ViewController: NSViewController {
           speakedContents = speakedContents.reversed() // 逆順に取得したコンテンツを逆さまにして時系列に変更する
           
           for content in speakedContents{
-            self.speaker.speakContent(content)
+            self.speaker.addSpeakedContent(content)
           }
           
         }
