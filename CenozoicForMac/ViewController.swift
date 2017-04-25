@@ -44,21 +44,27 @@ class ViewController: NSViewController {
       if let jsonData = data {
         // ここで取得したデータからJSONを抜き出し喋らせる処理を行う
         let json = self.getJSON(jsonData)
-        if(json.count != 0){
-          var speakedContents = self.getSpeakedContents(json)
-          self.updateLastID(json)
-          
-          speakedContents = speakedContents.reversed() // 逆順に取得したコンテンツを逆さまにして時系列に変更する
-          
-          for content in speakedContents{
-            self.speaker.addSpeakedContent(content)
-          }
-        }
+        self.addContentToSpeakerFrom(json: json)
       }
     }
     task.resume()
     if(!speaker.mainSpeaker.isSpeaking){
       speaker.speakOneContent()
+    }
+  }
+  
+  // JSONのデータからコンテンツを取得しSpeakerにAddする
+  func addContentToSpeakerFrom(json: NSArray){
+    // ここで取得したデータからJSONを抜き出し喋らせる処理を行う
+    if(json.count != 0){
+      var speakedContents = self.getSpeakedContents(json)
+      self.updateLastID(json)
+      
+      speakedContents = speakedContents.reversed() // 逆順に取得したコンテンツを逆さまにして時系列に変更する
+      
+      for content in speakedContents{
+        self.speaker.addSpeakedContent(content)
+      }
     }
   }
   
@@ -99,12 +105,13 @@ class ViewController: NSViewController {
   
   // String中のHTMLタグを削除する
   func removeHTMLTag(str: String) -> String {
-    return str.pregReplace(pattern: "<[^>]+>", with: "")
+    let removedTagStr = str.pregReplace(pattern: "<br>", with: "\n")
+    return removedTagStr.pregReplace(pattern: "<[^>]+>", with: "")
   }
   
   func removeURL(str: String) -> String{
     var removedURLString = String()
-    removedURLString =  str.pregReplace(pattern: "https?:\\/\\/[^\\s]+", with: "URL省略")
+    removedURLString =  str.pregReplace(pattern: "https?:\\/\\/[^\\s^\\n]+", with: "URL省略")
     print(removedURLString)
     return removedURLString
   }
