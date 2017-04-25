@@ -27,11 +27,11 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
   }
   
   func speakOneContent(){
-        if(self.speakContents.count != 0){
-          let speakedContent = String(self.speakContents[0])!
-          self.speakContents = Array(self.speakContents.dropFirst())
-          self.speakContent(speakedContent)
-        }
+    if(self.speakContents.count != 0){
+      let speakedContent = String(self.speakContents[0])!
+      self.speakContents = Array(self.speakContents.dropFirst())
+      self.speakContent(speakedContent)
+    }
   }
   
   func addSpeakedContent(_ content: String){

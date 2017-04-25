@@ -19,7 +19,7 @@ class ViewController: NSViewController {
     
     // Do any additional setup after loading the view.
     // 初回
-    speakNewToots()
+    addContentToSpeaker()
     
     speaker.startSpeaking()
     Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onUpdate(_:)), userInfo: nil, repeats: false)
@@ -32,11 +32,11 @@ class ViewController: NSViewController {
   }
   
   func onUpdate(_ timer: Timer){
-    speakNewToots()
+    addContentToSpeaker()
     Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.onUpdate(_:)), userInfo: nil, repeats: false)
   }
   
-  func speakNewToots() {
+  func addContentToSpeaker() {
     let timelineURL = "https://mstdn-workers.com/api/v1/timelines/public?local=true"
     let url = URL(string: timelineURL + "&since_id=" + String(lastID))!
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
