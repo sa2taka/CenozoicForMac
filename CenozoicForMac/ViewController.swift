@@ -48,6 +48,7 @@ class ViewController: NSViewController {
       }
     }
     task.resume()
+    // Speakerが喋らなくなったときにもう一度喋らせるための処理
     if(!speaker.mainSpeaker.isSpeaking){
       speaker.speakOneContent()
     }
@@ -72,7 +73,7 @@ class ViewController: NSViewController {
   func getJSON(_ data: Data) -> NSArray{
     var json : NSArray = []
     do{
-      // FIXME ここでdataが空のjson受け取るとisEmptyはfalseだがNSArrayでのキャストで落ちる
+      // FIXME ここの右側の値を正しくやりたい。多分だが2
       if(data.count > 5){
         json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSArray
       }

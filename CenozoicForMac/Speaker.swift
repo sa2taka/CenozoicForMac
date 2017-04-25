@@ -26,6 +26,7 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
     speakOneContent()
   }
   
+  // キュー的にコンテンツを取り出し再生する
   func speakOneContent(){
     if(self.speakContents.count != 0){
       let speakedContent = String(self.speakContents[0])!
@@ -35,7 +36,6 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
   }
   
   func addSpeakedContent(_ content: String){
-    print(speakContents)
     speakContents.append(content)
   }
   
@@ -48,10 +48,12 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
     mainSpeaker.rate = rate
   }
   
+  // 音声読み上げ終了時のコールバック(?)
   func speechSynthesizer(_ sender: NSSpeechSynthesizer, didFinishSpeaking finishedSpeaking: Bool) {
     speakOneContent()
   }
   
+  // 以下プロトコル
   func speechSynthesizer(_ sender: NSSpeechSynthesizer, didEncounterErrorAt characterIndex: Int, of string: String, message: String) {}
   
   func speechSynthesizer(_ sender: NSSpeechSynthesizer, willSpeakWord characterRange: NSRange, of string: String) {}
