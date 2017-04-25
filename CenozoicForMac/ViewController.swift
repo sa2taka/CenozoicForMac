@@ -94,6 +94,7 @@ class ViewController: NSViewController {
       var content = String(describing: (data as! Dictionary<String, Any>)["content"]!)
       content = removeHTMLTag(str: content)
       content = removeURL(str: content)
+      content = shortCharacters(str: content, to: 100)
       speakedContents.append(content)
     }
     return speakedContents
@@ -115,6 +116,15 @@ class ViewController: NSViewController {
     removedURLString =  str.pregReplace(pattern: "https?:\\/\\/[^\\s^\\n]+", with: "URL省略")
     print(removedURLString)
     return removedURLString
+  }
+  
+  func shortCharacters(str: String, to: Int) -> String{
+    var retVal = str
+    if(str.characters.count > to){
+      retVal = str.substring(to: str.index(str.startIndex, offsetBy: to))
+      retVal = retVal + " 以下省略"
+    }
+    return retVal
   }
 }
 
