@@ -87,6 +87,7 @@ class ViewController: NSViewController {
         json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSArray
       }
       else {
+        // JSONの中身がないとエラーを吐いて倒れるため空配列で初期化
         json = NSArray()
       }
     }
