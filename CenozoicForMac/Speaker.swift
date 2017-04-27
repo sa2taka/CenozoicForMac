@@ -49,16 +49,24 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
   }
   
   // 音声読み上げ終了時のコールバック(?)
-  func speechSynthesizer(_ sender: NSSpeechSynthesizer, didFinishSpeaking finishedSpeaking: Bool) {
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer,
+                         didFinishSpeaking finishedSpeaking: Bool) {
     speakOneContent()
   }
   
-  // 以下プロトコル
-  func speechSynthesizer(_ sender: NSSpeechSynthesizer, didEncounterErrorAt characterIndex: Int, of string: String, message: String) {}
+  // 以下プロトコル実装
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer,
+                         didEncounterErrorAt characterIndex: Int,
+                         of string: String,
+                         message: String) {}
   
-  func speechSynthesizer(_ sender: NSSpeechSynthesizer, willSpeakWord characterRange: NSRange, of string: String) {}
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer,
+                         willSpeakWord characterRange: NSRange,
+                         of string: String) {}
   
-  func speechSynthesizer(_ sender: NSSpeechSynthesizer, didEncounterSyncMessage message: String) {}
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer,
+                         didEncounterSyncMessage message: String) {}
   
-  func speechSynthesizer(_ sender: NSSpeechSynthesizer, willSpeakPhoneme phonemeOpcode: Int16) {}
+  func speechSynthesizer(_ sender: NSSpeechSynthesizer,
+                         willSpeakPhoneme phonemeOpcode: Int16) {}
 }

@@ -9,9 +9,10 @@
 import Cocoa
 
 class ViewController: NSViewController {
+  let waitTime = 10
+  
   var speaker = Speaker(rate: 360)
   var isSpeaking = false
-  let timelineURL = "https://mstdn-workers.com/api/v1/timelines/public?local=true"
   var lastID = 0;
   
   override func viewDidLoad() {
@@ -22,7 +23,12 @@ class ViewController: NSViewController {
     addContentToSpeaker()
     
     speaker.startSpeaking()
-    Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onUpdate(_:)), userInfo: nil, repeats: false)
+    
+    Timer.scheduledTimer(timeInterval: waitTime,
+                         target: self,
+                         selector: #selector(self.onUpdate(_:)),
+                         userInfo: nil,
+                         repeats: false)
   }
   
   override var representedObject: Any? {
@@ -33,7 +39,11 @@ class ViewController: NSViewController {
   
   func onUpdate(_ timer: Timer){
     addContentToSpeaker()
-    Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.onUpdate(_:)), userInfo: nil, repeats: false)
+    Timer.scheduledTimer(timeInterval: waitTime,
+                         target: self,
+                         selector: #selector(self.onUpdate(_:)),
+                         userInfo: nil,
+                         repeats: false)
   }
   
   func addContentToSpeaker() {
