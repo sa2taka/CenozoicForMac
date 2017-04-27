@@ -14,6 +14,7 @@ class ViewController: NSViewController {
   var speaker = Speaker(rate: 360)
   var isSpeaking = false
   var lastID = 0;
+  var maxCharacters = 100;
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -104,7 +105,7 @@ class ViewController: NSViewController {
       var content = String(describing: (data as! Dictionary<String, Any>)["content"]!)
       content = removeHTMLTag(str: content)
       content = removeURL(str: content)
-      content = shortCharacters(str: content, to_num: 100)
+      content = shortCharacters(str: content, to_num: maxCharacters)
       speakedContents.append(content)
     }
     return speakedContents
