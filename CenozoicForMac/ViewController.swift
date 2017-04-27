@@ -66,7 +66,6 @@ class ViewController: NSViewController {
   
   // JSONのデータからコンテンツを取得しSpeakerにAddする
   func addContentToSpeakerFrom(json: NSArray){
-    // ここで取得したデータからJSONを抜き出し喋らせる処理を行う
     if(json.count != 0){
       var speakedContents = self.getSpeakedContents(json)
       self.updateLastID(json)
@@ -104,7 +103,7 @@ class ViewController: NSViewController {
       var content = String(describing: (data as! Dictionary<String, Any>)["content"]!)
       content = removeHTMLTag(str: content)
       content = removeURL(str: content)
-      content = shortCharacters(str: content, to: 100)
+      content = shortCharacters(str: content, to_num: 100)
       speakedContents.append(content)
     }
     return speakedContents
@@ -130,10 +129,10 @@ class ViewController: NSViewController {
   }
   
   // 特定文字以上のtootsを一部省略する
-  func shortCharacters(str: String, to: Int) -> String{
+  func shortCharacters(str: String, to_num: Int) -> String{
     var retVal = str
-    if(str.characters.count > to){
-      retVal = str.substring(to: str.index(str.startIndex, offsetBy: to))
+    if(str.characters.count > to_num){
+      retVal = str.substring(to: str.index(str.startIndex, offsetBy: to_num))
       retVal = retVal + " 以下省略"
     }
     return retVal
