@@ -9,7 +9,7 @@
 import Cocoa
 
 class ViewController: NSViewController {
-  let waitTime = 10
+  let waitTime = TimeInterval(10)
   
   var speaker = Speaker(rate: 360)
   var isSpeaking = false
@@ -110,7 +110,7 @@ class ViewController: NSViewController {
     return speakedContents
   }
   
-  // LastIDを更新する
+  // LastIDを更新する, jsonの最初(最新)のidをLastIDとして登録する
   func updateLastID(_ json: NSArray){
     self.lastID = (json[0] as! Dictionary<String, Any>)["id"] as! Int
   }
@@ -121,6 +121,7 @@ class ViewController: NSViewController {
     return removedTagStr.pregReplace(pattern: "<[^>]+>", with: "")
   }
   
+  // URLを削除しURL省略という文字列に変更する
   func removeURL(str: String) -> String{
     var removedURLString = String()
     removedURLString =  str.pregReplace(pattern: "https?:\\/\\/[^\\s^\\n]+", with: "URL省略")
@@ -128,6 +129,7 @@ class ViewController: NSViewController {
     return removedURLString
   }
   
+  // 特定文字以上のtootsを一部省略する
   func shortCharacters(str: String, to: Int) -> String{
     var retVal = str
     if(str.characters.count > to){
