@@ -40,13 +40,13 @@ class ViewController: NSViewController {
   
   // 再生スピード変更時のメソッド
   @IBAction func changeSpeedSlider(_ sender: Any) {
-    changeSpeed(Int((sender as AnyObject).value)!)
+    let rate = Float((sender as AnyObject).value)!
+    speaker.changeRate(rate)
   }
   
   func changeSpeed(_ speed: Int){
     maxCharacters = speed
   }
-  
   
   
   
