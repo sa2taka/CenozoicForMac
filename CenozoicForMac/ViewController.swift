@@ -44,6 +44,11 @@ class ViewController: NSViewController {
     speaker.changeRate(rate)
   }
   
+  @IBAction func changeMacCharactersSlider(_ sender: Any) {
+    let speed = Int((sender as AnyObject).value)!
+    changeSpeed(speed)
+  }
+  
   func changeSpeed(_ speed: Int){
     maxCharacters = speed
   }
