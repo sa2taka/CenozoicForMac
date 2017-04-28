@@ -38,6 +38,18 @@ class ViewController: NSViewController {
     }
   }
   
+  // 再生スピード変更時のメソッド
+  @IBAction func changeSpeedSlider(_ sender: Any) {
+    changeSpeed(Int((sender as AnyObject).value)!)
+  }
+  
+  func changeSpeed(_ speed: Int){
+    maxCharacters = speed
+  }
+  
+  
+  
+  
   func onUpdate(_ timer: Timer){
     addContentToSpeaker()
     Timer.scheduledTimer(timeInterval: waitTime,
@@ -110,7 +122,7 @@ class ViewController: NSViewController {
     }
     return speakedContents
   }
-  
+
   // LastIDを更新する, jsonの最初(最新)のidをLastIDとして登録する
   func updateLastID(_ json: NSArray){
     self.lastID = (json[0] as! Dictionary<String, Any>)["id"] as! Int
