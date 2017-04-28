@@ -116,7 +116,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="3" doubleValue="2" tickMarkPosition="above" sliderType="linear" id="LLj-kV-ScA"/>
                                 <connections>
-                                    <action selector="changeSpeedSlider:" target="XfG-lQ-9wD" id="iRy-9K-8rt"/>
+                                    <action selector="changeSpeedSlider:" target="XfG-lQ-9wD" id="bGg-yl-ZLB"/>
                                 </connections>
                             </slider>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zUS-zw-mqU">
@@ -124,7 +124,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <sliderCell key="cell" state="on" alignment="left" minValue="30" maxValue="500" doubleValue="100" tickMarkPosition="above" sliderType="linear" id="z4N-JR-7Kh"/>
                                 <connections>
-                                    <action selector="changeMacCharactersSlider:" target="XfG-lQ-9wD" id="w5l-Vg-ElS"/>
+                                    <action selector="changeMaxCharactersSlider:" target="XfG-lQ-9wD" id="7Ji-b1-cNR"/>
                                 </connections>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3z-nE-1p7">
