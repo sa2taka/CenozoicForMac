@@ -25,16 +25,11 @@ class LTLSpeaker{
                          target: self,
                          selector: #selector(self.onUpdate(_:)),
                          userInfo: nil,
-                         repeats: false)
+                         repeats: true)
   }
   
   @objc func onUpdate(_ timer: Timer){
     addContentToSpeaker()
-    Timer.scheduledTimer(timeInterval: waitTime,
-                         target: self,
-                         selector: #selector(self.onUpdate(_:)),
-                         userInfo: nil,
-                         repeats: false)
   }
   
   func setRate(rate: Float){
