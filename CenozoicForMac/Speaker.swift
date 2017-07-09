@@ -28,7 +28,7 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
   
   // キュー的にコンテンツを取り出し再生する
   func speakOneContent(){
-    if(self.speakContents.count != 0){
+    if self.speakContents.count != 0 {
       let speakedContent = String(self.speakContents[0])!
       self.speakContents = Array(self.speakContents.dropFirst())
       self.speakContent(speakedContent)
