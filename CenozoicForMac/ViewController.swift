@@ -39,12 +39,12 @@ class ViewController: NSViewController {
   }
   
   // 再生スピード変更時のメソッド
-  @IBAction func changeSpeedSlider(_ sender: Any) {
+  @IBAction func onSlidechangeSpeedSlider(_ sender: Any) {
     let rate = (sender as! NSSlider).floatValue
     speaker.changeRate(rate)
   }
   
-  @IBAction func changeMaxCharactersSlider(_ sender: Any) {
+  @IBAction func onSlidechangeMaxCharactersSlider(_ sender: Any) {
     let maxCharacters = (sender as! NSSlider).intValue
     changeMaxCharacters(Int(maxCharacters))
   }
@@ -52,8 +52,6 @@ class ViewController: NSViewController {
   func changeMaxCharacters(_ maxCharacters: Int){
     self.maxCharacters = maxCharacters
   }
-  
-  
   
   func onUpdate(_ timer: Timer){
     addContentToSpeaker()
