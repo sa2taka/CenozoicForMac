@@ -12,7 +12,6 @@ class LTLSpeaker{
   let waitTime = TimeInterval(10)
   
   var speaker = Speaker(rate: 360)
-  var isSpeaking = false
   var lastID = 0;
   var maxCharacters = 100;
   
@@ -50,7 +49,6 @@ class LTLSpeaker{
     let timelineURL = "https://mstdn-workers.com/api/v1/timelines/public?local=true"
     let url = URL(string: timelineURL + "&since_id=" + String(lastID))!
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
-      self.isSpeaking = true
       if let jsonData = data {
         // ここで取得したデータからJSONを抜き出し喋らせる処理を行う
         let json = self.getJSON(jsonData)
@@ -59,14 +57,14 @@ class LTLSpeaker{
     }
     task.resume()
     // Speakerが喋らなくなったときにもう一度喋らせるための処理
-    if(!speaker.mainSpeaker.isSpeaking){
+    if !speaker.mainSpeaker.isSpeaking {
       speaker.speakOneContent()
     }
   }
   
   // JSONのデータからコンテンツを取得しSpeakerにAddする
   func addContentToSpeakerFrom(json: NSArray){
-    if(json.count != 0){
+    if json.count != 0 {
       var speakedContents = self.getSpeakedContents(json)
       self.updateLastID(json)
       
@@ -83,7 +81,7 @@ class LTLSpeaker{
     var json : NSArray = []
     do{
       // FIXME ここの右側の値を正しくやりたい。多分だが2
-      if(data.count > 5){
+      if data.count > 5 {
         json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSArray
       }
       else {
@@ -132,7 +130,7 @@ class LTLSpeaker{
   // 特定文字以上のtootsを一部省略する
   func shortCharacters(str: String, to_num: Int) -> String{
     var retVal = str
-    if(str.characters.count > to_num){
+    if str.characters.count > to_num {
       retVal = str.substring(to: str.index(str.startIndex, offsetBy: to_num))
       retVal = retVal + " 以下省略"
     }
