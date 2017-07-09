@@ -40,7 +40,7 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
   }
   
   // 喋る。
-  func speakContent(_ content: String){
+  private func speakContent(_ content: String){
     mainSpeaker.startSpeaking(content)
   }
   

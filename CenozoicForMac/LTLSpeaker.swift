@@ -45,7 +45,7 @@ class LTLSpeaker{
     maxCharacters = max
   }
   
-  func addContentToSpeaker() {
+  private func addContentToSpeaker() {
     let timelineURL = "https://mstdn-workers.com/api/v1/timelines/public?local=true"
     let url = URL(string: timelineURL + "&since_id=" + String(lastID))!
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -63,7 +63,7 @@ class LTLSpeaker{
   }
   
   // JSONのデータからコンテンツを取得しSpeakerにAddする
-  func addContentToSpeakerFrom(json: NSArray){
+  private func addContentToSpeakerFrom(json: NSArray){
     if json.count != 0 {
       var speakedContents = self.getSpeakedContents(json)
       self.updateLastID(json)
@@ -77,7 +77,7 @@ class LTLSpeaker{
   }
   
   // JSONを取得する
-  func getJSON(_ data: Data) -> NSArray{
+  private func getJSON(_ data: Data) -> NSArray{
     var json : NSArray = []
     do{
       // FIXME ここの右側の値を正しくやりたい。多分だが2
@@ -96,7 +96,7 @@ class LTLSpeaker{
   }
   
   // JSONからコンテント(HTMLタグを削除し、URLを省略したもの)を抜き出してArrayとして返す
-  func getSpeakedContents(_ json: NSArray) -> Array<String> {
+  private func getSpeakedContents(_ json: NSArray) -> Array<String> {
     var speakedContents = Array<String>()
     for data in json {
       var content = String(describing: (data as! Dictionary<String, Any>)["content"]!)
@@ -109,18 +109,18 @@ class LTLSpeaker{
   }
   
   // LastIDを更新する, jsonの最初(最新)のidをLastIDとして登録する
-  func updateLastID(_ json: NSArray){
+  private func updateLastID(_ json: NSArray){
     self.lastID = (json[0] as! Dictionary<String, Any>)["id"] as! Int
   }
   
   // String中のHTMLタグを削除する
-  func removeHTMLTag(str: String) -> String {
+  private func removeHTMLTag(str: String) -> String {
     let removedTagStr = str.pregReplace(pattern: "<br>", with: "\n")
     return removedTagStr.pregReplace(pattern: "<[^>]+>", with: "")
   }
   
   // URLを削除しURL省略という文字列に変更する
-  func removeURL(str: String) -> String{
+  private func removeURL(str: String) -> String{
     var removedURLString = String()
     removedURLString =  str.pregReplace(pattern: "https?:\\/\\/[^\\s^\\n]+", with: "URL省略")
     print(removedURLString)
@@ -128,7 +128,7 @@ class LTLSpeaker{
   }
   
   // 特定文字以上のtootsを一部省略する
-  func shortCharacters(str: String, to_num: Int) -> String{
+  private func shortCharacters(str: String, to_num: Int) -> String{
     var retVal = str
     if str.characters.count > to_num {
       retVal = str.substring(to: str.index(str.startIndex, offsetBy: to_num))
