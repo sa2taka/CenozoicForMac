@@ -52,7 +52,7 @@ class LTLSpeaker{
       if let jsonData = data {
         // ここで取得したデータからJSONを抜き出し喋らせる処理を行う
         let json = self.getJSON(jsonData)
-        self.addContentToSpeakerFrom(json: json)
+        self.addContentToSpeaker(from: json)
       }
     }
     task.resume()
@@ -63,7 +63,7 @@ class LTLSpeaker{
   }
   
   // JSONのデータからコンテンツを取得しSpeakerにAddする
-  private func addContentToSpeakerFrom(json: NSArray){
+  private func addContentToSpeaker(from json: NSArray){
     if json.count != 0 {
       var speakedContents = self.getSpeakedContents(json)
       self.updateLastID(json)
@@ -102,7 +102,7 @@ class LTLSpeaker{
       var content = String(describing: (data as! Dictionary<String, Any>)["content"]!)
       content = removeHTMLTag(str: content)
       content = removeURL(str: content)
-      content = shortCharacters(str: content, to_num: maxCharacters)
+      content = shortCharacters(str: content, to : maxCharacters)
       speakedContents.append(content)
     }
     return speakedContents
@@ -128,10 +128,10 @@ class LTLSpeaker{
   }
   
   // 特定文字以上のtootsを一部省略する
-  private func shortCharacters(str: String, to_num: Int) -> String{
+  private func shortCharacters(str: String, to num: Int) -> String{
     var retVal = str
-    if str.characters.count > to_num {
-      retVal = str.substring(to: str.index(str.startIndex, offsetBy: to_num))
+    if str.characters.count > num {
+      retVal = str.substring(to: str.index(str.startIndex, offsetBy: num))
       retVal = retVal + " 以下省略"
     }
     return retVal
