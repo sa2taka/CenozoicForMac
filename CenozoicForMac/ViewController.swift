@@ -18,6 +18,9 @@ class ViewController: NSViewController {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+    // 値の設定
+    speedSlider.floatValue = ltlSpeaker.getRate()
+    maxCharSlider.intValue = Int32(ltlSpeaker.getMaxCharacters())
   }
   
   override var representedObject: Any? {

@@ -39,8 +39,16 @@ class LTLSpeaker{
     speaker.changeRate(rate)
   }
   
+  func getRate() -> Float {
+    return speaker.getRate()
+  }
+  
   func setMaxCharacters(max: Int){
     maxCharacters = max
+  }
+  
+  func getMaxCharacters() -> Int {
+    return maxCharacters
   }
   
   private func addContentToSpeaker() {

@@ -48,6 +48,10 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
     mainSpeaker.rate = 200 * rate
   }
   
+  func getRate() -> Float {
+    return mainSpeaker.rate / 200
+  }
+  
   // 音声読み上げ終了時のコールバック(?)
   func speechSynthesizer(_ sender: NSSpeechSynthesizer,
                          didFinishSpeaking finishedSpeaking: Bool) {
