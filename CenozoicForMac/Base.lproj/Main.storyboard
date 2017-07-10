@@ -84,7 +84,7 @@
                         <menuItem title="設定" id="WHA-4e-aG6">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <segue destination="XfG-lQ-9wD" kind="modal" id="0vX-1J-iPz"/>
+                                <segue destination="XfG-lQ-9wD" kind="show" id="Ffa-I1-jvo"/>
                             </connections>
                         </menuItem>
                         <menuItem title="終了" id="1HF-D6-awl">
@@ -179,6 +179,10 @@
                             </textField>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="maxCharSlider" destination="zUS-zw-mqU" id="vMt-jc-pj3"/>
+                        <outlet property="speedSlider" destination="gGK-K0-Ady" id="ZVc-Sq-YBZ"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

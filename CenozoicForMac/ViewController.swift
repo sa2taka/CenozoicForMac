@@ -11,6 +11,9 @@ import Cocoa
 class ViewController: NSViewController {
   let ltlSpeaker = LTLSpeaker.sharedInstance
   
+  @IBOutlet weak var speedSlider: NSSlider!
+  @IBOutlet weak var maxCharSlider: NSSlider!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
