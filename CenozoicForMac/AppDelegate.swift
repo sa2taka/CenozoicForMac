@@ -12,15 +12,29 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 
+  @IBOutlet weak var menu: NSMenu!
+  
+  //メニューバーに表示されるアプリケーションを作成
+  let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
   
   func applicationDidFinishLaunching(_ aNotification: Notification) {
     // Insert code here to initialize your application
+    
+    // メニューバーに表示されるアプリ。今回は文字列で設定
+    statusItem.title = "CenForM"
+    //メニューのハイライトモードの設定
+    statusItem.highlightMode = true
+    //メニューの指定
+    statusItem.menu = menu
   }
 
   func applicationWillTerminate(_ aNotification: Notification) {
     // Insert code here to tear down your application
   }
 
-
+  
+  @IBAction func onPutQuit(_ sender: Any) {
+    NSApplication.shared().terminate(self)
+  }
 }
 

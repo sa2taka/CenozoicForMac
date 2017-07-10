@@ -74,7 +74,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CenozoicForMac" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CenozoicForMac" customModuleProvider="target">
+                    <connections>
+                        <outlet property="menu" destination="bUJ-et-MVq" id="ymu-Hy-3Ev"/>
+                    </connections>
+                </customObject>
                 <menu id="bUJ-et-MVq">
                     <items>
                         <menuItem title="設定" id="WHA-4e-aG6">
@@ -85,6 +89,9 @@
                         </menuItem>
                         <menuItem title="終了" id="1HF-D6-awl">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="onPutQuit:" target="Voe-Tx-rLC" id="8tI-E7-iBv"/>
+                            </connections>
                         </menuItem>
                     </items>
                 </menu>
