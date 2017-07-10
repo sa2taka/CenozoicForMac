@@ -26,6 +26,10 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
     speakOneContent()
   }
   
+  func stopSpeaking(){
+    mainSpeaker.stopSpeaking()
+  }
+  
   // キュー的にコンテンツを取り出し再生する
   func speakOneContent(){
     if self.speakContents.count != 0 {

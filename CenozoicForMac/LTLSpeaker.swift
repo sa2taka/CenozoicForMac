@@ -18,17 +18,24 @@ class LTLSpeaker{
   var lastID = 0;
   var maxCharacters = 100;
   
+  var timer = Timer()
+  
   private init(){
     addContentToSpeaker()
   }
   
   func startLoop(){
     speaker.startSpeaking()
-    Timer.scheduledTimer(timeInterval: waitTime,
+    timer = Timer.scheduledTimer(timeInterval: waitTime,
                          target: self,
                          selector: #selector(self.onUpdate(_:)),
                          userInfo: nil,
                          repeats: true)
+  }
+  
+  func stopLoop(){
+    timer.invalidate()
+    speaker.stopSpeaking()
   }
   
   @objc func onUpdate(_ timer: Timer){
