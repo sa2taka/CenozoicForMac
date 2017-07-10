@@ -10,9 +10,9 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-
   @IBOutlet weak var menu: NSMenu!
+  
+  let ltlSpeaker = LTLSpeaker()
   
   //メニューバーに表示されるアプリケーションを作成
   let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
@@ -26,6 +26,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     statusItem.highlightMode = true
     //メニューの指定
     statusItem.menu = menu
+    
+    // 初回
+    ltlSpeaker.startLoop()
   }
 
   func applicationWillTerminate(_ aNotification: Notification) {

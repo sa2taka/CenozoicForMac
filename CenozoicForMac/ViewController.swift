@@ -9,14 +9,10 @@
 import Cocoa
 
 class ViewController: NSViewController {
-  let ltlSpeaker = LTLSpeaker()
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
-    // 初回
-    ltlSpeaker.startLoop()
   }
   
   override var representedObject: Any? {
@@ -28,7 +24,7 @@ class ViewController: NSViewController {
   // 再生スピード変更時のメソッド
   @IBAction func onSlidechangeSpeedSlider(_ sender: Any) {
     let rate = (sender as! NSSlider).floatValue
-    ltlSpeaker.setRate(rate: rate)
+    //ltlSpeaker.setRate(rate: rate)
   }
   
   @IBAction func onSlidechangeMaxCharactersSlider(_ sender: Any) {
@@ -37,7 +33,7 @@ class ViewController: NSViewController {
   }
   
   func changeMaxCharacters(_ maxCharacters: Int){
-    ltlSpeaker.setMaxCharacters(max: maxCharacters)
+   // ltlSpeaker.setMaxCharacters(max: maxCharacters)
   }
 }
 
