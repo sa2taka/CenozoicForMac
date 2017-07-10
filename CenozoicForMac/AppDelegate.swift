@@ -12,7 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var menu: NSMenu!
   
-  let ltlSpeaker = LTLSpeaker()
+  let ltlSpeaker = LTLSpeaker.sharedInstance
   
   //メニューバーに表示されるアプリケーションを作成
   let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)

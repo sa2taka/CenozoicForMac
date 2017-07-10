@@ -9,13 +9,16 @@
 import Foundation
 
 class LTLSpeaker{
+  // シングルトンのための記述
+  static let sharedInstance = LTLSpeaker()
+  
   let waitTime = TimeInterval(10)
   
   var speaker = Speaker(rate: 360)
   var lastID = 0;
   var maxCharacters = 100;
   
-  init(){
+  private init(){
     addContentToSpeaker()
   }
   
