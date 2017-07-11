@@ -12,7 +12,7 @@ class LTLSpeaker{
   // シングルトンのための記述
   static let sharedInstance = LTLSpeaker()
   
-  let waitTime = TimeInterval(10)
+  let waitTime = TimeInterval(4)
   
   var speaker = Speaker(rate: 360)
   var lastID = 0;

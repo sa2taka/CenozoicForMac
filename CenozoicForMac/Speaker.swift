@@ -22,17 +22,19 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
   }
   
   func startSpeaking(){
+    isStartingSpeak = true
     Thread.sleep(forTimeInterval: 0.5)
     speakOneContent()
   }
   
   func stopSpeaking(){
+    isStartingSpeak = false
     mainSpeaker.stopSpeaking()
   }
   
   // キュー的にコンテンツを取り出し再生する
   func speakOneContent(){
-    if speakContents.count != 0 {
+    if speakContents.count != 0 && isStartingSpeak {
       let speakedContent = String(speakContents[0])!
       speakContents = Array(speakContents.dropFirst())
       speakContent(speakedContent)

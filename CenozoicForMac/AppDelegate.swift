@@ -33,9 +33,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       let hotKey = HotKey(identifier: "CommandDoubleTap", keyCombo: keyCombo, target: self, action: #selector(self.tappedDoubleCommandKey))
       hotKey.register() // or HotKeyCenter.shared.register(with: hotKey)
     }
-    
-    // 初回
-    ltlSpeaker.startLoop()
   }
 
   func applicationWillTerminate(_ aNotification: Notification) {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D325295E1F1568D500F2AA1C /* Magnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325295D1F1568D500F2AA1C /* Magnet.framework */; };
 		D325295F1F1568DB00F2AA1C /* Magnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325295D1F1568D500F2AA1C /* Magnet.framework */; };
 		D32529601F1568DB00F2AA1C /* Magnet.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D325295D1F1568D500F2AA1C /* Magnet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D32FF8DE1EACACC500AF0F1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8DD1EACACC500AF0F1E /* AppDelegate.swift */; };
@@ -78,7 +77,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D325295F1F1568DB00F2AA1C /* Magnet.framework in Frameworks */,
-				D325295E1F1568D500F2AA1C /* Magnet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
