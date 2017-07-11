@@ -49,6 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     else{
       ltlSpeaker.startLoop()
     }
+    print("tapped Double Command Key")
   }
   
   @IBAction func onPutQuit(_ sender: Any) {

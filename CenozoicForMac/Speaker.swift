@@ -32,10 +32,10 @@ class Speaker : NSObject, NSSpeechSynthesizerDelegate{
   
   // キュー的にコンテンツを取り出し再生する
   func speakOneContent(){
-    if self.speakContents.count != 0 {
-      let speakedContent = String(self.speakContents[0])!
-      self.speakContents = Array(self.speakContents.dropFirst())
-      self.speakContent(speakedContent)
+    if speakContents.count != 0 {
+      let speakedContent = String(speakContents[0])!
+      speakContents = Array(speakContents.dropFirst())
+      speakContent(speakedContent)
     }
   }
   
