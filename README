@@ -1,0 +1,15 @@
+# CenozoicForMac
+
+作業はしてたいけど<ruby><rp>(</rp><rt></rt><rp>)</rp></ruby>(労働者のための)マストドンの内容は覗いていたい...そんな社畜におすすめのMac用クライアント(予定)です。
+
+Mac上で動作するステータスバーアプリ(Dockに表示されないアプリ)です。
+
+### Installation
+
+現在このアプリを使用するためにはXcodeが必要です。また、筆者の環境では8.3.3ですが、8.3以上なら動くはずです。
+
+まずはshellを使って次のようにするか、githubの右上にある「Clone or download」よりzipをダウンロードして、任意の解凍ソフトで解答してください。
+
+``` shell
+$ git clone https://github.com/sa2taka/CenozoicForMac
+```
