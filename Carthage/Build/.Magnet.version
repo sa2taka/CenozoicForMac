@@ -1,0 +1,18 @@
+{
+  "iOS" : [
+
+  ],
+  "commitish" : "v2.0.1",
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "Mac" : [
+    {
+      "hash" : "6edb1bda151de9042aa46cb683d75e246191b451e36f9f1cfa537125739b7975",
+      "name" : "Magnet"
+    }
+  ]
+}

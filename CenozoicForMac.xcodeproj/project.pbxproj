@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D325295E1F1568D500F2AA1C /* Magnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325295D1F1568D500F2AA1C /* Magnet.framework */; };
+		D325295F1F1568DB00F2AA1C /* Magnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325295D1F1568D500F2AA1C /* Magnet.framework */; };
+		D32529601F1568DB00F2AA1C /* Magnet.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D325295D1F1568D500F2AA1C /* Magnet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D32FF8DE1EACACC500AF0F1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8DD1EACACC500AF0F1E /* AppDelegate.swift */; };
 		D32FF8E01EACACC500AF0F1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8DF1EACACC500AF0F1E /* ViewController.swift */; };
 		D32FF8E21EACACC500AF0F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D32FF8E11EACACC500AF0F1E /* Assets.xcassets */; };
@@ -35,7 +38,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D32529611F1568DB00F2AA1C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D32529601F1568DB00F2AA1C /* Magnet.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D325295B1F1568BD00F2AA1C /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
+		D325295D1F1568D500F2AA1C /* Magnet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Magnet.framework; path = Carthage/Build/Mac/Magnet.framework; sourceTree = "<group>"; };
 		D32FF8DA1EACACC500AF0F1E /* CenozoicForMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CenozoicForMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32FF8DD1EACACC500AF0F1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D32FF8DF1EACACC500AF0F1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D325295F1F1568DB00F2AA1C /* Magnet.framework in Frameworks */,
+				D325295E1F1568D500F2AA1C /* Magnet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +99,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D325295C1F1568D400F2AA1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D325295D1F1568D500F2AA1C /* Magnet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D32FF8D11EACACC500AF0F1E = {
 			isa = PBXGroup;
 			children = (
+				D325295B1F1568BD00F2AA1C /* Build */,
 				D32FF8DC1EACACC500AF0F1E /* CenozoicForMac */,
 				D32FF8EE1EACACC500AF0F1E /* CenozoicForMacTests */,
 				D32FF8F91EACACC500AF0F1E /* CenozoicForMacUITests */,
 				D32FF8DB1EACACC500AF0F1E /* Products */,
+				D325295C1F1568D400F2AA1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +172,7 @@
 				D32FF8D61EACACC500AF0F1E /* Sources */,
 				D32FF8D71EACACC500AF0F1E /* Frameworks */,
 				D32FF8D81EACACC500AF0F1E /* Resources */,
+				D32529611F1568DB00F2AA1C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -416,6 +448,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C6P4627NL8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = CenozoicForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sa2taka.CenozoicForMac;
@@ -430,6 +466,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = C6P4627NL8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = CenozoicForMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sa2taka.CenozoicForMac;

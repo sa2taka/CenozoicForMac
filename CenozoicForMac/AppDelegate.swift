@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Magnet
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -27,6 +28,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //メニューの指定
     statusItem.menu = menu
     
+    // コマンドダブルタップ
+    if let keyCombo = KeyCombo(doubledCocoaModifiers: .command) {
+      let hotKey = HotKey(identifier: "CommandDoubleTap", keyCombo: keyCombo, target: self, action: #selector(self.tappedDoubleCommandKey))
+      hotKey.register() // or HotKeyCenter.shared.register(with: hotKey)
+    }
+    
     // 初回
     ltlSpeaker.startLoop()
   }
@@ -35,6 +42,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Insert code here to tear down your application
   }
 
+  func tappedDoubleCommandKey() {
+    print("command double tapped!!!")
+  }
   
   @IBAction func onPutQuit(_ sender: Any) {
     NSApplication.shared().terminate(self)
