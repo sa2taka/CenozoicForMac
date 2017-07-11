@@ -43,7 +43,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   func tappedDoubleCommandKey() {
-    print("command double tapped!!!")
+    if ltlSpeaker.isSpeaking {
+      ltlSpeaker.stopLoop()
+    }
+    else{
+      ltlSpeaker.startLoop()
+    }
   }
   
   @IBAction func onPutQuit(_ sender: Any) {
