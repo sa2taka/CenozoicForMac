@@ -18,6 +18,10 @@ class MastodonManager {
   var access_token = String()
   
   init(){
+    init_clinet()
+  }
+  
+  private func init_clinet(){
     if let dir = FileManager.default.urls( for: .documentDirectory, in: .userDomainMask ).first {
       
       let path_file_name = dir.appendingPathComponent(client_filename)
