@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var menu: NSMenu!
   
   let ltlSpeaker = LTLSpeaker.sharedInstance
+  let mstdn = MastodonManager.sharedInstance
   
   //メニューバーに表示されるアプリケーションを作成
   let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
