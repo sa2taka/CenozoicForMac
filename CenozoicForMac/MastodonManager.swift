@@ -10,6 +10,7 @@ import Foundation
 
 class MastodonManager {
   static let sharedInstance = MastodonManager()
+  let hostInstanceURL = "https://mstdn-workers.jp"
   let client = Client(baseURL: "https://mstdn-workers.jp")
   
   let client_filename = "client.dat"
@@ -88,5 +89,17 @@ class MastodonManager {
       
       }
     }
+  }
+  
+  private func login_with_authorization() -> String{
+    let URLStr = hostInstanceURL + "/oauth/authorize?"
+      + "client_id=\(String(describing : ["clientID"]))"
+      + "&esponse_type=code"
+      + "&redirect_uri=urn:ietf:wg:oauth:2.0:oob"
+      + "&scope=read%20write"
+    
+    print(URLStr)
+    
+    
   }
 }
