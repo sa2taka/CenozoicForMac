@@ -107,6 +107,10 @@ class MastodonManager {
     }
   }
   
+  public func loginWithAuthorize(code: String){
+    
+  }
+  
   // POST
   private func post(url: URL, body: Dictionary<String, String>, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) throws {
     var request: URLRequest = URLRequest(url: url)

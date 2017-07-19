@@ -15,6 +15,8 @@
 		D32FF8E51EACACC500AF0F1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D32FF8E31EACACC500AF0F1E /* Main.storyboard */; };
 		D32FF8F01EACACC500AF0F1E /* CenozoicForMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8EF1EACACC500AF0F1E /* CenozoicForMacTests.swift */; };
 		D32FF8FB1EACACC500AF0F1E /* CenozoicForMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8FA1EACACC500AF0F1E /* CenozoicForMacUITests.swift */; };
+		D38A07E31F1F643700627495 /* MastodonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A07E21F1F643700627495 /* MastodonManager.swift */; };
+		D38A07E51F1F698D00627495 /* BrowserViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A07E41F1F698D00627495 /* BrowserViewControler.swift */; };
 		D38DCD4F1F126C2600CB60D9 /* LTLSpeaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38DCD4E1F126C2600CB60D9 /* LTLSpeaker.swift */; };
 		D3C11F791EACC68E00F1863B /* ExtinctStringClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C11F781EACC68E00F1863B /* ExtinctStringClass.swift */; };
 		D3C11F7F1EAE35AC00F1863B /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C11F7E1EAE35AC00F1863B /* Speaker.swift */; };
@@ -66,6 +68,8 @@
 		D32FF8F61EACACC500AF0F1E /* CenozoicForMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CenozoicForMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32FF8FA1EACACC500AF0F1E /* CenozoicForMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenozoicForMacUITests.swift; sourceTree = "<group>"; };
 		D32FF8FC1EACACC500AF0F1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D38A07E21F1F643700627495 /* MastodonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MastodonManager.swift; sourceTree = "<group>"; };
+		D38A07E41F1F698D00627495 /* BrowserViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserViewControler.swift; sourceTree = "<group>"; };
 		D38DCD4E1F126C2600CB60D9 /* LTLSpeaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTLSpeaker.swift; sourceTree = "<group>"; };
 		D3C11F781EACC68E00F1863B /* ExtinctStringClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtinctStringClass.swift; sourceTree = "<group>"; };
 		D3C11F7E1EAE35AC00F1863B /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 		D32FF8DC1EACACC500AF0F1E /* CenozoicForMac */ = {
 			isa = PBXGroup;
 			children = (
+				D38A07E21F1F643700627495 /* MastodonManager.swift */,
 				D3C11F7E1EAE35AC00F1863B /* Speaker.swift */,
 				D38DCD4E1F126C2600CB60D9 /* LTLSpeaker.swift */,
 				D32FF8DD1EACACC500AF0F1E /* AppDelegate.swift */,
@@ -138,6 +143,7 @@
 				D32FF8E11EACACC500AF0F1E /* Assets.xcassets */,
 				D32FF8E31EACACC500AF0F1E /* Main.storyboard */,
 				D32FF8E61EACACC500AF0F1E /* Info.plist */,
+				D38A07E41F1F698D00627495 /* BrowserViewControler.swift */,
 			);
 			path = CenozoicForMac;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38A07E31F1F643700627495 /* MastodonManager.swift in Sources */,
+				D38A07E51F1F698D00627495 /* BrowserViewControler.swift in Sources */,
 				D32FF8E01EACACC500AF0F1E /* ViewController.swift in Sources */,
 				D38DCD4F1F126C2600CB60D9 /* LTLSpeaker.swift in Sources */,
 				D3C11F791EACC68E00F1863B /* ExtinctStringClass.swift in Sources */,

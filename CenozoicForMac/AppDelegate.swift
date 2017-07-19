@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var menu: NSMenu!
   
   let ltlSpeaker = LTLSpeaker.sharedInstance
+  let mstdn = MastodonManager.sharedInstance
   
   //メニューバーに表示されるアプリケーションを作成
   let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
@@ -31,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // コマンドダブルタップ
     if let keyCombo = KeyCombo(doubledCocoaModifiers: .command) {
       let hotKey = HotKey(identifier: "CommandDoubleTap", keyCombo: keyCombo, target: self, action: #selector(self.tappedDoubleCommandKey))
-      hotKey.register() // or HotKeyCenter.shared.register(with: hotKey)
+      hotKey.register() // or HotKeyCenterß.shared.register(with: hotKey)
     }
   }
 
