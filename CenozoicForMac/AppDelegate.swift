@@ -16,6 +16,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let ltlSpeaker = LTLSpeaker.sharedInstance
   let mstdn = MastodonManager.sharedInstance
   
+  // tootするためのWindow
+  let tootWindow = NSWindow(contentRect: NSMakeRect(0, 0, NSScreen.main()!.frame.midX, NSScreen.main()!.frame.midY), styleMask: [.closable], backing: .buffered, defer: false)
+  
   //メニューバーに表示されるアプリケーションを作成
   let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
   
@@ -36,9 +39,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     // Cmd+Ctrl+t
-    if let keyCombo = KeyCombo(keyCode: 17, cocoaModifiers: [.shift, .control]){
-      let hotKey = HotKey(identifier: "CommandControlt", keyCombo: keyCombo, target: self, action: #selector(self.openTootWindow))
-      hotKey.register()
+    if let keyCombo2 = KeyCombo(keyCode: 17, carbonModifiers: 4352){
+      let hotKey2 = HotKey(identifier: "CommandControlT", keyCombo: keyCombo2, target: self, action: #selector(self.openTootWindow))
+      hotKey2.register()
     }
   }
 
@@ -56,8 +59,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     print("tapped Double Command Key")
   }
   
+  func createNewWindow() {
+    tootWindow.title = "New Window"
+    tootWindow.isOpaque = false
+    tootWindow.center()
+    tootWindow.isMovableByWindowBackground = true
+    tootWindow.backgroundColor = NSColor(calibratedHue: 0, saturation: 1.0, brightness: 0, alpha: 0.7)
+    tootWindow.makeKeyAndOrderFront(nil)
+  }
+  
   func openTootWindow(){
-    
+    print("tapped Cmd-Ctrl-t Key")
+    createNewWindow()
   }
   
   @IBAction func onPutQuit(_ sender: Any) {

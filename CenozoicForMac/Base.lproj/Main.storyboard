@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="77" y="-30"/>
         </scene>
-        <!--Browser View Controller-->
+        <!--Login-->
         <scene sceneID="9hA-hM-eWM">
             <objects>
-                <viewController storyboardIdentifier="browser" id="ncs-Ob-F4b" customClass="BrowserViewController" customModule="CenozoicForMac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" storyboardIdentifier="browser" id="ncs-Ob-F4b" customClass="BrowserViewController" customModule="CenozoicForMac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="onz-PX-pxR">
                         <rect key="frame" x="0.0" y="0.0" width="725" height="653"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -163,10 +163,23 @@
             </objects>
             <point key="canvasLocation" x="572.5" y="485.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Toot View Controller-->
+        <scene sceneID="3Ke-Kq-9IN">
+            <objects>
+                <viewController storyboardIdentifier="toot" id="Tx7-Ua-Bnx" customClass="TootViewController" customModule="CenozoicForMac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="CwY-KD-pJ5">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="y38-Hj-tJL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="309"/>
+        </scene>
+        <!--Preference-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="CenozoicForMac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Preference" id="XfG-lQ-9wD" customClass="ViewController" customModule="CenozoicForMac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>

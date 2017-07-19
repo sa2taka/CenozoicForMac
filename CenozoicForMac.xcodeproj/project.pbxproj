@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D325295F1F1568DB00F2AA1C /* Magnet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325295D1F1568D500F2AA1C /* Magnet.framework */; };
 		D32529601F1568DB00F2AA1C /* Magnet.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D325295D1F1568D500F2AA1C /* Magnet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D326B35D1F1F887B0062C82A /* TootViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D326B35C1F1F887B0062C82A /* TootViewControler.swift */; };
 		D32FF8DE1EACACC500AF0F1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8DD1EACACC500AF0F1E /* AppDelegate.swift */; };
 		D32FF8E01EACACC500AF0F1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32FF8DF1EACACC500AF0F1E /* ViewController.swift */; };
 		D32FF8E21EACACC500AF0F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D32FF8E11EACACC500AF0F1E /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		D325295B1F1568BD00F2AA1C /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
 		D325295D1F1568D500F2AA1C /* Magnet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Magnet.framework; path = Carthage/Build/Mac/Magnet.framework; sourceTree = "<group>"; };
+		D326B35C1F1F887B0062C82A /* TootViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TootViewControler.swift; sourceTree = "<group>"; };
 		D32FF8DA1EACACC500AF0F1E /* CenozoicForMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CenozoicForMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32FF8DD1EACACC500AF0F1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D32FF8DF1EACACC500AF0F1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				D32FF8E31EACACC500AF0F1E /* Main.storyboard */,
 				D32FF8E61EACACC500AF0F1E /* Info.plist */,
 				D38A07E41F1F698D00627495 /* BrowserViewControler.swift */,
+				D326B35C1F1F887B0062C82A /* TootViewControler.swift */,
 			);
 			path = CenozoicForMac;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				D38A07E31F1F643700627495 /* MastodonManager.swift in Sources */,
 				D38A07E51F1F698D00627495 /* BrowserViewControler.swift in Sources */,
 				D32FF8E01EACACC500AF0F1E /* ViewController.swift in Sources */,
+				D326B35D1F1F887B0062C82A /* TootViewControler.swift in Sources */,
 				D38DCD4F1F126C2600CB60D9 /* LTLSpeaker.swift in Sources */,
 				D3C11F791EACC68E00F1863B /* ExtinctStringClass.swift in Sources */,
 				D32FF8DE1EACACC500AF0F1E /* AppDelegate.swift in Sources */,

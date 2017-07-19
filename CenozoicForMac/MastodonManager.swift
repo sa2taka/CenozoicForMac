@@ -103,8 +103,6 @@ class MastodonManager {
       
       let path_file = dir.appendingPathComponent(access_token_filename)
       
-      print(path_file)
-      
       // アクセストークンに関するファイルがあったら、読み取る
       if FileManager.default.fileExists(atPath: String(describing: path_file.path)) {
         do {
