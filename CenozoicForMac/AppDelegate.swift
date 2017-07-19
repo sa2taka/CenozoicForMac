@@ -32,7 +32,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // コマンドダブルタップ
     if let keyCombo = KeyCombo(doubledCocoaModifiers: .command) {
       let hotKey = HotKey(identifier: "CommandDoubleTap", keyCombo: keyCombo, target: self, action: #selector(self.tappedDoubleCommandKey))
-      hotKey.register() // or HotKeyCenterß.shared.register(with: hotKey)
+      hotKey.register() // or HotKeyCenter.shared.register(with: hotKey)
+    }
+    
+    // Cmd+Ctrl+t
+    if let keyCombo = KeyCombo(keyCode: 17, cocoaModifiers: [.shift, .control]){
+      let hotKey = HotKey(identifier: "CommandControlt", keyCombo: keyCombo, target: self, action: #selector(self.openTootWindow))
+      hotKey.register()
     }
   }
 
@@ -48,6 +54,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       ltlSpeaker.startLoop()
     }
     print("tapped Double Command Key")
+  }
+  
+  func openTootWindow(){
+    
   }
   
   @IBAction func onPutQuit(_ sender: Any) {
