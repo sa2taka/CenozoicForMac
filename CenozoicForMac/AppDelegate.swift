@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   //メニューバーに表示されるアプリケーションを作成
   let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
   
-  func applicationDidFinishLaunching(_ aNotification: Notification) {
+  private func applicationDidFinishLaunching(_ aNotification: Notification) {
     // Insert code here to initialize your application
     
     // メニューバーに表示されるアプリ。今回は文字列で設定
@@ -35,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
   }
 
-  func applicationWillTerminate(_ aNotification: Notification) {
+  private func applicationWillTerminate(_ aNotification: Notification) {
     // Insert code here to tear down your application
   }
 
