@@ -11,14 +11,20 @@ import Foundation
 class MastodonManager {
   static let sharedInstance = MastodonManager()
   let hostInstanceURL = "https://mstdn-workers.com"
-  let client = Client(baseURL: "https://mstdn-workers.com")
   
   let client_filename = "client.dat"
   let access_token_filename = "access.dat"
   var client_info = Dictionary<String, Any>()
   var access_token = String()
+  var isLogin = false
   
   var authorizationURL = ""
+  
+  
+  // Mastodonのインスタンスから返ってくるjson格納用
+  var responseJson = Dictionary<String, Any>()
+  
+  let session = URLSession.shared
   
   init(){
     init_clinet()
@@ -46,29 +52,33 @@ class MastodonManager {
         
         // 無かったら、登録してファイルに書き込む
       else{
-        let request = Clients.register(
-          clientName: "Cenozoic For Mac",
-          scopes: [.read, .write],
-          website: "https://github.com/sa2taka/CenozoicForMac"
-        )
+        // 登録URL
+        let registUrl = URL(string: hostInstanceURL + "/api/v1/apps")!
         
-        client.run(request, completion: { (application:Result<ClientApplication>?) in
-          if let application = application, let model = application.value{
-            self.client_info["id"] = model.id
-            self.client_info["redirectURI"] = model.redirectURI
-            self.client_info["clientID"] = model.clientID
-            self.client_info["clientSecret"] = model.clientSecret
+        // client_name: アプリ名とかどこからの投稿かわかるための名前
+        // redirect_uris: おまじない(公式で"urn:ietf:wg:oauth:2.0:oob"を書く様に記載)
+        // scopes: 権限。今回に関してはwriteだけで足りるが、必要に応じてスペース区切りで追加 例→ "write read follow"
+        // website: アプリのURLやWebsite。client_nameにこのリンクがつく(省略可能)
+        let body: [String: String] = ["client_name": "Cenozoic For Mac", "redirect_uris": "urn:ietf:wg:oauth:2.0:oob", "scopes": "write read"]
+        
+        // 登録POST
+        do {
+          try post(url: registUrl, body: body) { data, response, error in
+            do {
+              self.responseJson = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! Dictionary<String, AnyObject>
+              self.client_info["id"] = self.responseJson["id"]
+              self.client_info["redirectURI"] = self.responseJson["redirect_uri"]
+              self.client_info["clientID"] = self.responseJson["client_id"]
+              self.client_info["clientSecret"] = self.responseJson["client_secret"]
+            }
+            catch {
+              // JSON変換メソッドの例外キャッチ
+            }
           }
-          
-          do {
-            let text = "\(String(describing: self.client_info["id"]!))\n\(String(describing: self.client_info["redirectURI"]!))\n\(String(describing: self.client_info["clientID"]!))\n\(String(describing: self.client_info["clientSecret"]!))"
-            try text.write( to: path_file, atomically: false, encoding: String.Encoding.utf8 )
-          }
-          catch{
-          }
-          
-          self.login() // 非同期処理最後にログイン
-        })
+        }
+        catch {
+          // postメソッドの例外キャッチ
+        }
       }
     }
   }
@@ -83,16 +93,28 @@ class MastodonManager {
         do {
           let text = try String( contentsOf: path_file, encoding: String.Encoding.utf8 )
           access_token = text.lines[0]
+          isLogin = true
         }
         catch{
           
         }
       }
-        // 無かったら、登録してファイルに書き込む
+        // 無かったら、まずはauhorizationのためのURLを作成する
       else{
         create_authorization()
       }
     }
+  }
+  
+  // POST
+  private func post(url: URL, body: Dictionary<String, String>, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) throws {
+    var request: URLRequest = URLRequest(url: url)
+    
+    request.httpMethod = "POST"
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.httpBody = try JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+    
+    session.dataTask(with: request, completionHandler: completionHandler).resume()
   }
   
   private func create_authorization(){
