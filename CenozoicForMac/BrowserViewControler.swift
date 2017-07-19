@@ -26,10 +26,11 @@ class BrowserViewController: NSViewController {
   
   override func viewDidAppear() {
     super.viewDidAppear()
-    
-    let url = URL(string: MastodonManager.sharedInstance.authorizationURL)
-    let urlRequest = URLRequest(url: url!)
-    self.browser.load(urlRequest)
+    if !MastodonManager.sharedInstance.isLogin{
+      let url = URL(string: MastodonManager.sharedInstance.authorizationURL)
+      let urlRequest = URLRequest(url: url!)
+      self.browser.load(urlRequest)
+    }
   }
   
   override var representedObject: Any? {
