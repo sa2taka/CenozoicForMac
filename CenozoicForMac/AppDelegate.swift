@@ -17,7 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let mstdn = MastodonManager.sharedInstance
   
   // tootするためのWindow
-  let tootWindow = NSWindow(contentRect: NSMakeRect(0, 0, NSScreen.main()!.frame.midX, NSScreen.main()!.frame.midY), styleMask: [.closable], backing: .buffered, defer: false)
+  var tootWindow = NSWindow()
+  var isTootWindowActive = false
   
   //メニューバーに表示されるアプリケーションを作成
   let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
@@ -44,11 +45,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       hotKey2.register()
     }
   }
-
+  
   func applicationWillTerminate(_ aNotification: Notification) {
     // Insert code here to tear down your application
   }
-
+  
   func tappedDoubleCommandKey() {
     if ltlSpeaker.isSpeaking {
       ltlSpeaker.stopLoop()
@@ -59,18 +60,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     print("tapped Double Command Key")
   }
   
-  func createNewWindow() {
+  func createTootWindow() {
+    tootWindow = NSWindow(contentRect: NSMakeRect(0, 0, 720, 120), styleMask: [.closable], backing: .buffered, defer: false)
     tootWindow.title = "New Window"
     tootWindow.isOpaque = false
     tootWindow.center()
     tootWindow.isMovableByWindowBackground = true
-    tootWindow.backgroundColor = NSColor(calibratedHue: 0, saturation: 1.0, brightness: 0, alpha: 0.7)
-    tootWindow.makeKeyAndOrderFront(nil)
+    tootWindow.backgroundColor = NSColor(calibratedHue: 0, saturation: 0, brightness: 0.8, alpha: 0.8)
+    tootWindow.makeKeyAndOrderFront(self)
+    tootWindow.order(.below, relativeTo: 0)
+    // windowが100枚開かれていなければ最前面に行く
+    tootWindow.level = 100
+  }
+  
+  func closeTootWindow(){
+    tootWindow.orderOut(self)
   }
   
   func openTootWindow(){
     print("tapped Cmd-Ctrl-t Key")
-    createNewWindow()
+    if isTootWindowActive{
+      closeTootWindow()
+      isTootWindowActive = false
+    }
+    else{
+      createTootWindow()
+      isTootWindowActive = true
+    }
   }
   
   @IBAction func onPutQuit(_ sender: Any) {
