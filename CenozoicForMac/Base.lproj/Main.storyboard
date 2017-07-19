@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfG-lQ-9wD">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -81,10 +82,16 @@
                 </customObject>
                 <menu id="bUJ-et-MVq">
                     <items>
+                        <menuItem title="ログイン" id="XIE-3U-MSK">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <segue destination="ncs-Ob-F4b" kind="modal" id="n3h-cf-yEv"/>
+                            </connections>
+                        </menuItem>
                         <menuItem title="設定" id="WHA-4e-aG6">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <segue destination="XfG-lQ-9wD" kind="show" id="Ffa-I1-jvo"/>
+                                <segue destination="XfG-lQ-9wD" kind="modal" id="cen-ih-PQi"/>
                             </connections>
                         </menuItem>
                         <menuItem title="終了" id="1HF-D6-awl">
@@ -98,6 +105,32 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="77" y="-30"/>
+        </scene>
+        <!--Browser View Controller-->
+        <scene sceneID="9hA-hM-eWM">
+            <objects>
+                <viewController id="ncs-Ob-F4b" customClass="BrowserViewController" customModule="CenozoicForMac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="onz-PX-pxR">
+                        <rect key="frame" x="0.0" y="0.0" width="725" height="718"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXP-gY-076">
+                                <rect key="frame" x="20" y="66" width="685" height="632"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="browser" destination="DXP-gY-076" id="IGP-cD-3KP"/>
+                    </connections>
+                </viewController>
+                <customObject id="0Ai-Bx-5jn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="572.5" y="518"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">

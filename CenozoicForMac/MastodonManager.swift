@@ -5,6 +5,8 @@
 //  Created by t0p_l1ght on 2017/07/12.
 //  Copyright © 2017年 Kazuhiro S. All rights reserved.
 //
+// 以下のソースコードはhttp://qiita.com/aryzae/items/564a16ebd87322fa70e3や
+//                     http://qiita.com/m13o/items/7798f09f16523d5693d5を参考にしました
 
 import Foundation
 
@@ -58,7 +60,6 @@ class MastodonManager {
         // client_name: アプリ名とかどこからの投稿かわかるための名前
         // redirect_uris: おまじない(公式で"urn:ietf:wg:oauth:2.0:oob"を書く様に記載)
         // scopes: 権限。今回に関してはwriteだけで足りるが、必要に応じてスペース区切りで追加 例→ "write read follow"
-        // website: アプリのURLやWebsite。client_nameにこのリンクがつく(省略可能)
         let body: [String: String] = ["client_name": "Cenozoic For Mac", "redirect_uris": "urn:ietf:wg:oauth:2.0:oob", "scopes": "write read"]
         
         // 登録POST
@@ -118,7 +119,7 @@ class MastodonManager {
   }
   
   private func create_authorization(){
-    authorizationURL =  hostInstanceURL + "oauth/authorize?"
+    authorizationURL =  hostInstanceURL + "/oauth/authorize?"
       + "client_id=\(String(describing : client_info["clientID"]!))"
       + "&response_type=code"
       + "&redirect_uri=urn:ietf:wg:oauth:2.0:oob"
