@@ -163,6 +163,23 @@ class MastodonManager {
     
   }
   
+  public func toot(status : String){
+    let tootURL = hostInstanceURL + "/api/v1/statuses"
+    let body: [String: String] = ["access_token": access_token,
+                                  "status": status,
+                                  "visibility": "public"]
+    
+    if isLogin {
+      do {
+        try post(url: tootURL, body: body) { data, response, error in
+          // 特に何もしない
+        }
+      }
+      catch {
+      }
+    }
+  }
+  
   // POST
   private func post(url: URL, body: Dictionary<String, String>, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) throws {
     var request: URLRequest = URLRequest(url: url)
