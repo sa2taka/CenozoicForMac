@@ -10,7 +10,7 @@ import Cocoa
 import Magnet
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
   @IBOutlet weak var menu: NSMenu!
   
   let ltlSpeaker = LTLSpeaker.sharedInstance
@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   // tootするためのWindow
   var tootWindow = NSWindow()
   var isTootWindowActive = false
+  var tootTextField : NSTextField?
   
   //メニューバーに表示されるアプリケーションを作成
   let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
@@ -61,13 +62,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   func createTootWindow() {
-    tootWindow = NSWindow(contentRect: NSMakeRect(0, 0, 720, 120), styleMask: [.closable], backing: .buffered, defer: false)
-    tootWindow.title = "New Window"
-    tootWindow.isOpaque = false
+    tootWindow = NSWindow(contentRect: NSMakeRect(0, 0, 720, 120), styleMask: [.titled], backing: .buffered, defer: true)
+    tootWindow.title = "Toot Window"
     tootWindow.center()
     tootWindow.isMovableByWindowBackground = true
-    tootWindow.backgroundColor = NSColor(calibratedHue: 0, saturation: 0, brightness: 0.8, alpha: 0.8)
+    tootWindow.backgroundColor = NSColor(calibratedHue: 0, saturation: 0, brightness: 0.6, alpha: 0.8)
+    
+    // textFieldを追加
+    let tootTextField = NSTextField(frame: NSMakeRect(20.0, 20.0, 680.0, 80.0))
+    tootTextField.isEditable = true
+    tootTextField.isEnabled = true
+    tootTextField.backgroundColor = NSColor(calibratedHue: 0, saturation: 0, brightness: 0.8, alpha: 0.8)
+    tootTextField.font = NSFont(name: ".Hiragino Kaku Gothic Interface W3", size: CGFloat(28))
+    tootTextField.delegate = self
+    tootTextField.becomeFirstResponder()
+    tootWindow.contentView?.addSubview(tootTextField)
     tootWindow.makeKeyAndOrderFront(self)
+    
+    // どんな場合も最前面に動かすための処理
+    
     tootWindow.order(.below, relativeTo: 0)
     // windowが100枚開かれていなければ最前面に行く
     tootWindow.level = 100
@@ -91,6 +104,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   
   @IBAction func onPutQuit(_ sender: Any) {
     NSApplication.shared().terminate(self)
+  }
+  
+  override func controlTextDidEndEditing(_ obj: Notification) {
+  }
+  
+  override func controlTextDidChange(_ notification: Notification) {
+    let object = notification.object as! NSTextField
+    print(object.stringValue)
+  }
+  
+  override func controlTextDidBeginEditing(_ obj: Notification) {
   }
 }
 
