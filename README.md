@@ -32,8 +32,9 @@ $ git clone https://github.com/sa2taka/CenozoicForMac
 ### 以下備忘録兼実装したいものリスト
 ---
 
-- [ ] ログイン機構  
-- [ ] Toot機能  
+- [x] ログイン機構  
+- [x] Toot機能
+- [ ] ログインアカウントのLTLの読み上げ
 - [ ] ([KeyHolder](https://github.com/Clipy/KeyHolder)を用いた)ショートカットの任意変更機能  
 - [ ] (簡易的な)単語の読み方変更機能
 - [ ] このアプリのアイコン(ステータスバーに表示する)を作りたい

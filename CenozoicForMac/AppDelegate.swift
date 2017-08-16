@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     //メニューの指定
     statusItem.menu = menu
     
-    // コマンドダブルタップ
+    // Cmdダブルタップ
     if let keyCombo = KeyCombo(doubledCocoaModifiers: .command) {
       let hotKey = HotKey(identifier: "CommandDoubleTap", keyCombo: keyCombo, target: self, action: #selector(self.tappedDoubleCommandKey))
       hotKey.register() // or HotKeyCenter.shared.register(with: hotKey)
@@ -85,6 +85,8 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     tootWindow.contentView?.addSubview(tootTextField!)
     tootWindow.makeKey()
     
+    // windowをアクティブにする
+    // FIXME: windowを作って消して作ってと連続で作るとアクティブ状態にならない
     NSApplication.shared().activate(ignoringOtherApps: true)
     
     // どんな場合も最前面に動かすための処理
