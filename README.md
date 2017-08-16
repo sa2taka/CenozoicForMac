@@ -7,13 +7,13 @@ Mac上で動作するステータスバーアプリ(Dockに表示されないア
 ---
 #### .appから実行する
 
-CenozoicForMac.appをこちらからダウンロードして、ダブルクリックなどで起動するとプログラムが動きます。
+CenozoicForMac.appを[こちら](https://github.com/sa2taka/CenozoicForMac/releases/tag/v1.0)からダウンロードして、ダブルクリックなどで起動するとプログラムが動きます。
 
 #### ソースから実行する
 
 現在このアプリをビルドするためにはXcodeが必要です。また、筆者の環境では8.3.3ですが、8.3以上なら動くはずです。  
 まずは任意のターミナルを使って次のようにコマンドを打つか、githubの右上にある
-"Clone or download"、またこちらのページからzip(またはtar.gz)をダウンロードして、任意の解凍ソフトで解凍ししてください。
+"Clone or download"、また[こちらのページ](https://github.com/sa2taka/CenozoicForMac/releases/tag/v1.0)からzip(またはtar.gz)をダウンロードして、任意の解凍ソフトで解凍してください。
 
 ``` shell
 $ git clone https://github.com/sa2taka/CenozoicForMac
