@@ -10,7 +10,7 @@ import Cocoa
 import Magnet
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate{
   @IBOutlet weak var menu: NSMenu!
   
   let ltlSpeaker = LTLSpeaker.sharedInstance
@@ -41,9 +41,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
     }
     
     // Cmd+Ctrl+t
-    if let keyCombo2 = KeyCombo(keyCode: 17, carbonModifiers: 4352){
+    if let keyCombo2 = KeyCombo(keyCode: 17, cocoaModifiers: [.command, .control]){
       let hotKey2 = HotKey(identifier: "CommandControlT", keyCombo: keyCombo2, target: self, action: #selector(self.openTootWindow))
       hotKey2.register()
+    }
+    
+      // Cmd+Enter
+    if let keyCombo3 = KeyCombo(keyCode: 36, cocoaModifiers: [.command]){
+      let hotKey3 = HotKey(identifier: "CmdEnter", keyCombo: keyCombo3, target: self, action: #selector(self.toot))
+      hotKey3.register()
     }
   }
   
@@ -62,32 +68,32 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
   }
   
   func createTootWindow() {
-    tootWindow = NSWindow(contentRect: NSMakeRect(0, 0, 720, 120), styleMask: [.titled], backing: .buffered, defer: true)
+    tootWindow = NSWindow(contentRect: NSMakeRect(0, 0, 720, 160), styleMask: [.titled], backing: .buffered, defer: true)
     tootWindow.title = "Toot Window"
     tootWindow.center()
     tootWindow.isMovableByWindowBackground = true
+    tootWindow.isOpaque = true
     tootWindow.backgroundColor = NSColor(calibratedHue: 0, saturation: 0, brightness: 0.6, alpha: 0.8)
     
     // textFieldを追加
-    let tootTextField = NSTextField(frame: NSMakeRect(20.0, 20.0, 680.0, 80.0))
-    tootTextField.isEditable = true
-    tootTextField.isEnabled = true
-    tootTextField.backgroundColor = NSColor(calibratedHue: 0, saturation: 0, brightness: 0.8, alpha: 0.8)
-    tootTextField.font = NSFont(name: ".Hiragino Kaku Gothic Interface W3", size: CGFloat(28))
-    tootTextField.delegate = self
-    tootTextField.becomeFirstResponder()
-    tootWindow.contentView?.addSubview(tootTextField)
-    tootWindow.makeKeyAndOrderFront(self)
+    tootTextField = NSTextField(frame: NSMakeRect(20.0, 20.0, 680.0, 120.0))
+    tootTextField?.isEditable = true
+    tootTextField?.isEnabled = true
+    tootTextField?.backgroundColor = NSColor(calibratedHue: 0, saturation: 0, brightness: 0.8, alpha: 0.8)
+    tootTextField?.font = NSFont(name: ".Hiragino Kaku Gothic Interface W3", size: CGFloat(24))
+    tootTextField?.becomeFirstResponder()
+    tootWindow.contentView?.addSubview(tootTextField!)
+    tootWindow.makeKey()
+    
+    NSApplication.shared().activate(ignoringOtherApps: true)
     
     // どんな場合も最前面に動かすための処理
-    
-    tootWindow.order(.below, relativeTo: 0)
-    // windowが100枚開かれていなければ最前面に行く
-    tootWindow.level = 100
+    tootWindow.orderFrontRegardless()
   }
   
   func closeTootWindow(){
     tootWindow.orderOut(self)
+    NSApplication.shared().deactivate()
   }
   
   func openTootWindow(){
@@ -102,19 +108,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
     }
   }
   
+  func toot(){
+    print("tapped Cmd-Enter")
+    if let inputStr = tootTextField?.stringValue{
+      if isTootWindowActive && !inputStr.isEmpty{
+        mstdn.toot(status: inputStr)
+        closeTootWindow()
+        isTootWindowActive = false
+      }
+    }
+  }
+  
   @IBAction func onPutQuit(_ sender: Any) {
     NSApplication.shared().terminate(self)
-  }
-  
-  override func controlTextDidEndEditing(_ obj: Notification) {
-  }
-  
-  override func controlTextDidChange(_ notification: Notification) {
-    let object = notification.object as! NSTextField
-    print(object.stringValue)
-  }
-  
-  override func controlTextDidBeginEditing(_ obj: Notification) {
   }
 }
 

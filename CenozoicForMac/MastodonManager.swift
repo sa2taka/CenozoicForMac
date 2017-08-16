@@ -164,7 +164,7 @@ class MastodonManager {
   }
   
   public func toot(status : String){
-    let tootURL = hostInstanceURL + "/api/v1/statuses"
+    let tootURL = URL(string: hostInstanceURL + "/api/v1/statuses")!
     let body: [String: String] = ["access_token": access_token,
                                   "status": status,
                                   "visibility": "public"]
