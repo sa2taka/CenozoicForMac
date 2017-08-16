@@ -44,7 +44,8 @@ $ git clone https://github.com/sa2taka/CenozoicForMac
 
 toot画面を表示するためにはCmd-Ctrl-tを押します。  
 この時文字列は入力できますが、改行が現在出来ません(Ctrl-Enterで見た目だけ改行は出来ますが)。  
-そしてCmd-Enterで送信します
+そしてCmd-Enterで送信します。
+また、toot画面をtootせず消すときはCmd-Ctrl-tをもう一度押してください。
 
 ![toot画面](ScreenShot/toot.gif)
 
@@ -60,6 +61,7 @@ toot画面を表示するためにはCmd-Ctrl-tを押します。
 - [ ] (簡易的な)単語の読み方変更機能
 - [ ] このアプリのアイコン(ステータスバーに表示する)を作りたい
 - [ ] 様々な丼への対応
+- [ ] toot画面のタイトルバーを消したい(消すとTextFieldもともに消える)
 
 ### Other
 ---
