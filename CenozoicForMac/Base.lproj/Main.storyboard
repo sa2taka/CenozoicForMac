@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -81,10 +82,16 @@
                 </customObject>
                 <menu id="bUJ-et-MVq">
                     <items>
-                        <menuItem title="設定" id="WHA-4e-aG6">
+                        <menuItem title="ログイン" id="XIE-3U-MSK">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <segue destination="XfG-lQ-9wD" kind="show" id="Ffa-I1-jvo"/>
+                                <segue destination="ncs-Ob-F4b" kind="modal" id="n3h-cf-yEv"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="読み上げ設定" id="WHA-4e-aG6">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <segue destination="XfG-lQ-9wD" kind="modal" id="cen-ih-PQi"/>
                             </connections>
                         </menuItem>
                         <menuItem title="終了" id="1HF-D6-awl">
@@ -99,10 +106,89 @@
             </objects>
             <point key="canvasLocation" x="77" y="-30"/>
         </scene>
-        <!--View Controller-->
+        <!--Login-->
+        <scene sceneID="9hA-hM-eWM">
+            <objects>
+                <viewController title="Login" storyboardIdentifier="browser" id="ncs-Ob-F4b" customClass="BrowserViewController" customModule="CenozoicForMac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="onz-PX-pxR">
+                        <rect key="frame" x="0.0" y="0.0" width="725" height="653"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd6-JO-gfJ">
+                                <rect key="frame" x="36" y="20" width="534" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="CSQ-hx-URb">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T9P-zy-rim">
+                                <rect key="frame" x="600" y="13" width="101" height="32"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="push" title="コード送信" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ceV-9t-dsq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".HiraKakuInterface-W3"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="sendCode:" target="ncs-Ob-F4b" id="prB-ww-aDg"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTX-3i-tg2">
+                                <rect key="frame" x="185" y="50" width="374" height="27"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="↓ に右クリックでペーストしてください" id="QQR-5x-7v1">
+                                    <font key="font" metaFont="system" size="22"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5p-Yh-ChE">
+                                <rect key="frame" x="185" y="78" width="390" height="27"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ログイン後コードを右クリックでコピーし" id="mhc-Cw-nIG">
+                                    <font key="font" size="22" name=".HiraKakuInterface-W3"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-5d-dtK">
+                                <rect key="frame" x="20" y="113" width="675" height="520"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="browser" destination="r5Y-5d-dtK" id="akP-H1-IbV"/>
+                        <outlet property="codeField" destination="Zd6-JO-gfJ" id="Kac-za-k8q"/>
+                        <outlet property="codeSendButton" destination="T9P-zy-rim" id="3ua-z3-tde"/>
+                    </connections>
+                </viewController>
+                <customObject id="0Ai-Bx-5jn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="572.5" y="485.5"/>
+        </scene>
+        <!--Toot View Controller-->
+        <scene sceneID="3Ke-Kq-9IN">
+            <objects>
+                <viewController storyboardIdentifier="toot" id="Tx7-Ua-Bnx" customClass="TootViewController" customModule="CenozoicForMac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="CwY-KD-pJ5">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="y38-Hj-tJL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="309"/>
+        </scene>
+        <!--Preference-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="CenozoicForMac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Preference" id="XfG-lQ-9wD" customClass="ViewController" customModule="CenozoicForMac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -22,4 +22,13 @@ extension String {
     let regex = try! NSRegularExpression(pattern: pattern, options: options)
     return regex.stringByReplacingMatches(in: self, options: [], range: NSMakeRange(0, self.count), withTemplate: with)
   }
+  
+  // 以下のソースはhttp://qiita.com/codelynx/items/183b29c95110e0dc05dbより
+  var lines: [String] {
+    var lines = [String]()
+    self.enumerateLines { (line, stop) -> () in
+      lines.append(line)
+    }
+    return lines
+  }
 }
